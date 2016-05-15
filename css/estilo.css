@@ -1,0 +1,67 @@
+html, body {
+	height: 100%;
+	margin: 0px;
+}
+
+.secao {
+	padding: 2em;
+}
+
+textarea {
+	resize: none;
+}
+
+
+/* Menu */
+#conteudo-pagina {
+	padding-left: 3em;
+}
+
+#menu {
+	position: fixed;
+	top: 0;
+	left: -15em;
+	height: 100%;
+	z-index: 9999;
+}
+
+#menu ul {
+	list-style: none;
+}
+
+#menu .texto-menu-aberto {
+	float: left;
+	padding: 1em 1em 1em 0em;
+	overflow: auto;
+}
+
+#menu .glyphicon-play {
+	float: right;
+	font-size: 2.4em;
+	cursor: pointer;
+	padding: 0.4em 0.2em 1em 0.2em;
+}
+/* Fim Menu */
+
+
+/* Post */
+
+.post {
+	margin-bottom: 2em;
+}
+
+/* Fim Post */
+
+/* Cores Temporarias -- Remover ao fazer o estilo -- */
+#menu {
+	background-color: #666;
+}
+
+#barra-funcionalidades {
+	background-color: #111;
+}
+
+#rodape {
+	background-color: #AAA;
+}
+/* Fim Cores Temporarias */
