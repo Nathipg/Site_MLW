@@ -37,10 +37,14 @@ textarea {
 }
 
 #menu .glyphicon-play {
-	float: right;
+	float: top;
 	font-size: 2.4em;
 	cursor: pointer;
-	padding: 0.4em 0.2em 1em 0.2em;
+	padding: 1em 0.2em 20em 0.2em;
+}
+
+#menu h1{
+	padding-left: 0.5em;
 }
 /* Fim Menu */
 
