@@ -53,6 +53,39 @@ textarea {
 }
 /* Fim Menu */
 
+/* Menu de Atalhos */
+
+#menu-atalhos ul li {
+	list-style: none;
+	display: inline-block;
+	padding: 0.5em;
+}
+
+#menu-atalhos a, span {
+	font-style: none;
+	color: white;
+}
+
+#menu-atalhos span {
+	padding: 0.5em;
+}
+
+#menu-atalhos .texto-menu-aberto {
+	display: block;
+}
+
+#menu-atalhos .texto-menu-fechado {
+	display: none;
+	font-size: 1.5em;
+	text-align: right;
+}
+
+#menu-atalhos .texto-menu-fechado span {
+	cursor: pointer;
+}
+
+/* Fim Menu de Atalhos */
+
 
 /* Post */
 
@@ -75,3 +108,29 @@ textarea {
 	background-color: #AAA;
 }
 /* Fim Cores Temporarias */
+
+
+/* Responsividade */
+
+@media (max-width: 750px) {
+	#menu-atalhos .texto-menu-fechado {
+		display: block;
+	}
+
+	#menu-atalhos .texto-menu-aberto {
+		display: none;
+	}
+
+	#menu-atalhos ul li {
+	list-style: none;
+	display: block;
+	padding: 0.5em;
+}
+
+@media (min-width: 750px) {
+	#menu-atalhos .texto-menu-aberto {
+		display: block !important;
+	}
+}
+
+/* Fim Responsividade */

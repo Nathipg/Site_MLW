@@ -20,4 +20,14 @@ $(document).ready(function () {
 		}
 		$('#menu').toggleClass('menu-fechado');
 	});
+
+	/* Funcao responsavel por abrir o menu de atalhos */
+	$('#menu-atalhos .menuclick').click(function() {
+		if($('#menu-atalhos').hasClass('menu-fechado')) {
+			$('#menu-atalhos .texto-menu-aberto').show();
+		} else {
+			$('#menu-atalhos .texto-menu-aberto').hide();
+		}
+		$('#menu-atalhos').toggleClass('menu-fechado');
+	});
 });
