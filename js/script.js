@@ -11,7 +11,7 @@ $(document).ready(function () {
 			$('.glyphicon-play').css("-moz-transform", "rotate(180deg)");
 			$('.glyphicon-play').css("transform", "rotate(180deg)");
 		} else {
-			$('#menu').animate({left: '-15em'}, 600);
+			$('#menu').animate({left: '-17.77em'}, 600);
 			$('.glyphicon-play').css("-webkit-transform", "rotate(0deg)");
 			$('.glyphicon-play').css("-o-transform", "rotate(0deg)");
 			$('.glyphicon-play').css("-ms-transform", "rotate(0deg)");

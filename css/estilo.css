@@ -21,13 +21,30 @@ textarea {
 #menu {
 	position: fixed;
 	top: 0;
-	left: -15em;
+	left: -17.77em;
 	height: 100%;
 	z-index: 9999;
 }
 
 #menu ul {
 	list-style: none;
+}
+
+#menu ul li{
+	font-size: 1.2em;
+	padding: 0.2em;
+}
+
+#menu ul li:hover{
+	cursor: pointer;
+	padding: 0.2em;
+	border-radius: 0.3em;
+}
+#menu ul li:hover .glyphicon{
+	-webkit-animation-name: rotateicon;
+	-webkit-animation-duration: 5s;
+	animation-name: rotateicon;
+	animation-duration: 5s;
 }
 
 #menu .texto-menu-aberto {
@@ -39,7 +56,7 @@ textarea {
 #menu .menuclick{
 	cursor: pointer;
 	position:relative;
-	padding: 4.5em 0em 80em 0em;
+	padding: 4.5em 0.2em 80em 0.2em;
 }
 
 #menu .glyphicon-play {
@@ -97,7 +114,13 @@ textarea {
 
 /* Cores Temporarias -- Remover ao fazer o estilo -- */
 #menu {
-	background-color: #666;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+}
+
+#menu ul li:hover{
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
 }
 
 #barra-funcionalidades {
@@ -109,6 +132,14 @@ textarea {
 }
 /* Fim Cores Temporarias */
 
+/* Animações: Sra Eu tenho tempo*/
+@keyframes rotateicon{
+	100%	{-webkit-transform: rotate(360deg);}
+	100%	{-o-transform: rotate(360deg);}
+	100%	{-ms-transform: rotate(360deg);}
+	100%	{-moz-transform: rotate(360deg);}
+	100%	{transform: rotate(360deg);}
+}
 
 /* Responsividade */
 
