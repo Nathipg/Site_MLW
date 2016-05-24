@@ -5,14 +5,17 @@ html, body {
 }
 
 .secao {
-	padding: 2em;
+	padding: 1em;
 }
 
 textarea {
 	resize: none;
 }
 
-
+#logohome {
+	height: 12em;
+	width: 12em;
+}
 /* Menu */
 #conteudo-pagina {
 	padding-left: 3em;
@@ -21,7 +24,7 @@ textarea {
 #menu {
 	position: fixed;
 	top: 0;
-	left: -17.77em;
+	left: -18.2em;
 	height: 100%;
 	z-index: 9999;
 }
@@ -32,12 +35,11 @@ textarea {
 
 #menu ul li{
 	font-size: 1.2em;
-	padding: 0.2em;
+	padding: 0.5em 0.3em 0.5em 0.3em;
 }
 
 #menu ul li:hover{
 	cursor: pointer;
-	padding: 0.2em;
 	border-radius: 0.3em;
 }
 #menu ul li:hover .glyphicon{
@@ -154,7 +156,7 @@ textarea {
 	#menu-atalhos ul li {
 		list-style: none;
 		display: block;
-		padding: 0.5em;
+		padding: 0.5em ;
 	}
 }
 
