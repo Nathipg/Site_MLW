@@ -11,9 +11,7 @@ $(document).ready(function () {
 			$('.glyphicon-play').css("-moz-transform", "rotate(180deg)");
 			$('.glyphicon-play').css("transform", "rotate(180deg)");
 			/* Som ao abrir */
-			if($('#somcontrol').hasClass('glyphicon-volume-up')) {
-				$('#sommenuopen').trigger('play');
-			}
+			PlaySound(this, 1)
 		} else {
 			$('#menu').animate({left: '-18.2em'}, 600);
 			$('.glyphicon-play').css("-webkit-transform", "rotate(0deg)");
@@ -22,26 +20,38 @@ $(document).ready(function () {
 			$('.glyphicon-play').css("-moz-transform", "rotate(0deg)");
 			$('.glyphicon-play').css("transform", "rotate(0deg)");
 			/* Som ao fechar */
-			if($('#somcontrol').hasClass('glyphicon-volume-up')) {
-				$('#sommenuclose').trigger('play');
-			}
+			PlaySound(this, 2)
 		}
 		$('#menu').toggleClass('menu-fechado');		
 	});
+	/* Função definir sons */
+	function PlaySound(elemento, tipo){
+		if($('#somcontrol').hasClass('glyphicon-volume-up')) {
+			switch (tipo) {
+				case 1:
+					$('#sommenuopen').trigger('play');
+					break;
+				case 2:
+					$('#sommenuclose').trigger('play');
+					break;
+				case 3:
+					$('#sommenuclick').trigger('play');
+					break;
+			}
+		}
+	}
 	
 	/* Som do click no menu */
 	$('#menu ul li').click(function() {
-		if($('#somcontrol').hasClass('glyphicon-volume-up')) {
-			$('#sommenuclick').trigger('play');
-		}
+		PlaySound(this, 3)
 	});
 	
 	/* Controle do som do site */
 	$('#somcontrol').click(function() {
-		if($('#somcontrol').hasClass('glyphicon-volume-off')) {
-			$('#somcontrol').toggleClass('glyphicon-volume-up');
+		if($(this).hasClass('glyphicon-volume-off')) {
+			$(this).toggleClass('glyphicon-volume-up');
 		} else {
-			$('#somcontrol').toggleClass('glyphicon-volume-off');
+			$(this).toggleClass('glyphicon-volume-off');
 		}
 	});
 	
@@ -50,16 +60,13 @@ $(document).ready(function () {
 		if($('#menu-atalhos').hasClass('menu-fechado')) {
 			$('#menu-atalhos .texto-menu-aberto').show();
 			/* Som ao abrir */
-			if($('#somcontrol').hasClass('glyphicon-volume-up')) {
-				$('#sommenuopen').trigger('play');
-			}
+			PlaySound(this, 1)
 		} else {
 			$('#menu-atalhos .texto-menu-aberto').hide();
 			/* Som ao fechar */
-			if($('#somcontrol').hasClass('glyphicon-volume-up')) {
-				$('#sommenuclose').trigger('play');
-			}
+			PlaySound(this, 2)
 		}
 		$('#menu-atalhos').toggleClass('menu-fechado');
 	});
+    $('[data-toggle="tooltip"]').tooltip();
 });
