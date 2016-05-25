@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/estilo.css" />
+	<link rel="stylesheet" href="css/socialmedia.css" />
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -84,16 +85,16 @@
 			<div id="corpo" class="secao">
 				<div class="row">
 					<div class="col-lg-8">
-						RESENHAS
-						<div id="post1" class="post">
+						<span>ÚLTIMAS NOTÍCIAS</span>
+						<div class="post">
 							<h1>Título do Post</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non eleifend nunc, in cursus risus. Suspendisse gravida urna sem, at tempus tellus fermentum nec. Vivamus felis metus, elementum eget dolor vitae, consequat pretium nulla. In vel posuere dolor. Sed sit amet porttitor ligula, id sollicitudin ipsum. Suspendisse elementum eros leo, a porttitor est pellentesque quis. Fusce ornare risus id commodo congue. Nulla facilisi. Quisque imperdiet augue vel imperdiet lobortis.</p>
 						</div>
-						<div id="post2" class="post">
+						<div class="post">
 							<h1>Título do Post</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non eleifend nunc, in cursus risus. Suspendisse gravida urna sem, at tempus tellus fermentum nec. Vivamus felis metus, elementum eget dolor vitae, consequat pretium nulla. In vel posuere dolor. Sed sit amet porttitor ligula, id sollicitudin ipsum. Suspendisse elementum eros leo, a porttitor est pellentesque quis. Fusce ornare risus id commodo congue. Nulla facilisi. Quisque imperdiet augue vel imperdiet lobortis.</p>
 						</div>
-						<div id="post3" class="post">
+						<div class="post">
 							<h1>Título do Post</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non eleifend nunc, in cursus risus. Suspendisse gravida urna sem, at tempus tellus fermentum nec. Vivamus felis metus, elementum eget dolor vitae, consequat pretium nulla. In vel posuere dolor. Sed sit amet porttitor ligula, id sollicitudin ipsum. Suspendisse elementum eros leo, a porttitor est pellentesque quis. Fusce ornare risus id commodo congue. Nulla facilisi. Quisque imperdiet augue vel imperdiet lobortis.</p>
 						</div>
@@ -112,75 +113,33 @@
 			<!-- Rodape -->
 			<div id="rodape" class="secao">
 				<div class="row" id="rodape">
-					<div class="col-lg-4">
-						<div class="row">
-							<div class="col-lg-12">
-								<h3>Endereço</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								Suíça, Liechtenstein <br/>
-								Vaduz - 9490
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d608.6360446388463!2d9.52037434630057!3d47.14105024607922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b31665c517ef3%3A0x5143d97dca1b7b82!2s9490+Vaduz%2C+Liechtenstein!5e1!3m2!1spt-BR!2sbr!4v1463615251698"></iframe>
-							</div>
-						</div>
+					<div class="col-lg-3">
+						<h3>Contato</h3>
+						<span class="glyphicon glyphicon-earphone"></span> &#160; +41 +423 239 63 01<br/>
+						<span class="glyphicon glyphicon-envelope"></span> &#160; contato@wizardgames.com.br
+					</div>
+					<div class="col-lg-3">
+						<h3>Redes Sociais</h3>
+						<a href="https://twitter.com" target="_blank">
+							<span class="socicon-twitter social-media"></span>
+						</a>
+						<a href="https://www.facebook.com/" target="_blank">
+							<span class="socicon-facebook social-media"></span>
+						</a>
+						<a href="https://plus.google.com" target="_blank">
+							<span class="socicon-googleplus social-media"></span>
+						</a>
+						<a href="https://spotify.com" target="_blank">
+							<span class="socicon-spotify social-media"></span>
+						</a>						
+					</div>
+					<div class="col-lg-2">
+						<h3>Endereço</h3>
+						<span class="glyphicon glyphicon-home"></span> &#160; Suíça, Liechtenstein <br/>
+						&#160;&#160;&#160;&#160;&#160;&#160; Vaduz - 9490
 					</div>
 					<div class="col-lg-4">
-						<div class="row">
-							<div class="col-lg-12">
-								<h3>Contato</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								+41 +423 239 63 01 <br/>
-								contato@nomeempresa.com.br		
-							</div>
-						</div>
-						
-					</div>
-					<div class="col-lg-4">
-						<form action="">
-							<div class="row">
-								<div class="col-lg-12">
-									<h3>Mensagem</h3>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="form-group">
-										<label>Nome</label>
-										<input class="form-control" type="text" name="nome" />
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="form-group">
-										<label>E-mail</label>
-										<input class="form-control" type="text" name="email" />
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="form-group">
-										<label>Mensagem</label>
-										<textarea class="form-control" name="mensagem"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="form-group">
-										<input type="submit" class="btn btn-primary" />
-									</div>
-								</div>
-							</div>
-						</form>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d608.6360446388463!2d9.52037434630057!3d47.14105024607922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b31665c517ef3%3A0x5143d97dca1b7b82!2s9490+Vaduz%2C+Liechtenstein!5e1!3m2!1spt-BR!2sbr!4v1463615251698"></iframe>
 					</div>
 				</div>
 			</div>

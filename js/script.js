@@ -4,7 +4,7 @@ $(document).ready(function () {
 	/* Funcao responsavel por abrir o menu */
 	$('#menu .menuclick').click(function() {
 		if($('#menu').hasClass('menu-fechado')) {
-			$('#menu').animate({left: 0}, 600);
+			$('#menu').animate({left: 0}, 900);
 			$('.glyphicon-play').css("-webkit-transform", "rotate(180deg)");
 			$('.glyphicon-play').css("-o-transform", "rotate(180deg)");
 			$('.glyphicon-play').css("-ms-transform", "rotate(180deg)");
@@ -13,7 +13,7 @@ $(document).ready(function () {
 			/* Som ao abrir */
 			PlaySound(this, 1)
 		} else {
-			$('#menu').animate({left: '-18.2em'}, 600);
+			$('#menu').animate({left: '-18.2em'}, 300);
 			$('.glyphicon-play').css("-webkit-transform", "rotate(0deg)");
 			$('.glyphicon-play').css("-o-transform", "rotate(0deg)");
 			$('.glyphicon-play').css("-ms-transform", "rotate(0deg)");

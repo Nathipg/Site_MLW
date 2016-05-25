@@ -4,6 +4,10 @@ html, body {
 	text-align: justify;
 }
 
+iframe {
+	width: 100%;
+}
+
 .secao {
 	padding: 1em;
 }
@@ -85,7 +89,7 @@ textarea {
 	padding: 0.5em;
 }
 
-#menu-atalhos a, span {
+#menu-atalhos a, #menu-atalhos span {
 	font-style: none;
 	color: white;
 }
@@ -109,15 +113,6 @@ textarea {
 }
 
 /* Fim Menu de Atalhos */
-
-
-/* Post */
-
-.post {
-	margin-bottom: 2em;
-}
-
-/* Fim Post */
 
 /* Cores  */
 #menu{
@@ -143,6 +138,12 @@ textarea {
 
 #rodape {
 	background-color: #AAA;
+	
+}
+
+#rodape span{
+	color: white;
+	
 }
 /* Fim Cores*/
 
@@ -155,6 +156,31 @@ textarea {
 	100%	{transform: rotateY(1440deg);}
 }
 /* Fim das Animações */
+
+/* Icones */
+
+#rodape a:hover {
+	text-decoration: none;
+}
+
+.social-media {
+	font-size: 2em;
+	padding-right: 1em;
+}
+
+/* Fim Icones */
+
+/* Post */
+
+.post {
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 1em;
+	margin-bottom: 2em;
+	padding: 1em;
+}
+
+/* Fim Post */
+
 /* Responsividade */
 
 @media (max-width: 719px) {
@@ -190,3 +216,8 @@ textarea {
 }
 
 /* Fim Responsividade */
+
+@font-face {
+    font-family: Viner Hand ITC;
+    src: url("../fonts/Viner_Hand_ITC.ttf");
+}
