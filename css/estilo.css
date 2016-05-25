@@ -98,7 +98,10 @@ textarea {
 #menu-atalhos .texto-menu-fechado span {
 	cursor: pointer;
 }
-
+#somcontrol {
+	font-size: 1.5em;
+	cursor: pointer;
+}
 /* Fim Menu de Atalhos */
 
 
@@ -144,7 +147,7 @@ textarea {
 /* Fim das Animações */
 /* Responsividade */
 
-@media (max-width: 720px) {
+@media (max-width: 719px) {
 	#menu-atalhos .texto-menu-fechado {
 		display: block;
 	}
@@ -160,7 +163,7 @@ textarea {
 	}
 }
 
-@media (min-width: 721px) {
+@media (min-width: 720px) {
 	#menu-atalhos .texto-menu-aberto{
 		display: block !important;
 	}
