@@ -11,7 +11,7 @@ $(document).ready(function () {
 			$('.glyphicon-play').css("-moz-transform", "rotate(180deg)");
 			$('.glyphicon-play').css("transform", "rotate(180deg)");
 			/* Som ao abrir */
-			PlaySound(this, 1)
+			playSound(1);
 		} else {
 			$('#menu').animate({left: '-18.2em'}, 300);
 			$('.glyphicon-play').css("-webkit-transform", "rotate(0deg)");
@@ -20,12 +20,13 @@ $(document).ready(function () {
 			$('.glyphicon-play').css("-moz-transform", "rotate(0deg)");
 			$('.glyphicon-play').css("transform", "rotate(0deg)");
 			/* Som ao fechar */
-			PlaySound(this, 2)
+			playSound(2);
 		}
 		$('#menu').toggleClass('menu-fechado');		
 	});
+	
 	/* Função definir sons */
-	function PlaySound(elemento, tipo){
+	function playSound(tipo){
 		if($('#somcontrol').hasClass('glyphicon-volume-up')) {
 			switch (tipo) {
 				case 1:
@@ -39,11 +40,34 @@ $(document).ready(function () {
 					break;
 			}
 		}
-	}
+	};
 	
-	/* Som do click no menu */
+	/*Click no menu: Link e Som*/
 	$('#menu ul li').click(function() {
-		PlaySound(this, 3)
+		playSound(3);
+		switch (this.id){
+			case "avaliacao":
+				$(location).attr('href', this.id + '.xhtml');
+				break;
+			case "console"	:
+				$(location).attr('href', this.id + '.xhtml');
+				break;
+			case "hardware"	:
+				$(location).attr('href', this.id + '.xhtml');
+				break;
+			case "cadastro":
+				$(location).attr('href', this.id + '.xhtml');
+				break;
+			case "sobre"	:
+				$(location).attr('href', this.id + '.xhtml');
+				break;
+			case "produtos"	:
+				$(location).attr('href', this.id + '.xhtml');
+				break;
+			case "pacman"	:
+				$(location).attr('href', this.id + '.xhtml');
+				break;
+		}
 	});
 	
 	/* Controle do som do site */
@@ -60,13 +84,14 @@ $(document).ready(function () {
 		if($('#menu-atalhos').hasClass('menu-fechado')) {
 			$('#menu-atalhos .texto-menu-aberto').show();
 			/* Som ao abrir */
-			PlaySound(this, 1)
+			playSound(1);
 		} else {
 			$('#menu-atalhos .texto-menu-aberto').hide();
 			/* Som ao fechar */
-			PlaySound(this, 2)
+			playSound(2);
 		}
 		$('#menu-atalhos').toggleClass('menu-fechado');
 	});
+	
     $('[data-toggle="tooltip"]').tooltip();
 });

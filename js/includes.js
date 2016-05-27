@@ -6,13 +6,13 @@ function incluirMenu() {
 			<div class="texto-menu-aberto">\n\
 			<h1>Menu</h1>\n\
 				<ul>\n\
-					<li><span class="glyphicon glyphicon-star"></span> Avaliação do Usuários</li>\n\
-					<li><span class="glyphicon glyphicon-certificate"></span> Consoles</li>\n\
-					<li><span class="glyphicon glyphicon-cog"></span> Hardware</li>\n\
-					<li><a href="cadastro.xhtml"><span class="glyphicon glyphicon-user"></span> Cadastro</a></li>\n\
-					<li><span class="glyphicon glyphicon-road"></span> Sobre nós</li>\n\
-					<li><span class="glyphicon glyphicon-barcode"></span> Produtos</li>\n\
-					<li><span class="glyphicon glyphicon-star"></span> Pacman</li>\n\
+					<li id="avaliacao"><span class="glyphicon glyphicon-star"></span> Avaliação do Usuários</li>\n\
+					<li id="consoles"><span class="glyphicon glyphicon-certificate"></span> Consoles</li>\n\
+					<li id="hardware"><span class="glyphicon glyphicon-cog"></span> Hardware</li>\n\
+					<li id="cadastro"><span class="glyphicon glyphicon-user"></span> Cadastro</li>\n\
+					<li id="sobre"><span class="glyphicon glyphicon-road"></span> Sobre nós</li>\n\
+					<li id="produtos"><span class="glyphicon glyphicon-barcode"></span> Produtos</li>\n\
+					<li id="pacman"><span class="glyphicon glyphicon-star"></span> Pacman</li>\n\
 				</ul>\n\
 			</div>\n\
 		</div>');
@@ -59,7 +59,7 @@ function incluirCabecalho () {
 
 function incluirRodape () {
 	$('body').append('<div id="rodape" class="secao">\n\
-				<div class="row" id="rodape">\n\
+				<div class="row">\n\
 					<div class="col-lg-3">\n\
 						<h3>Contato</h3>\n\
 						<span class="glyphicon glyphicon-earphone"></span> &#160; +41 +423 239 63 01<br/>\n\

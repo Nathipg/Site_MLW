@@ -18,10 +18,6 @@ a:hover {
 	color: black;
 }
 
-.secao {
-	padding: 1em;
-}
-
 textarea {
 	resize: none;
 }
@@ -148,10 +144,13 @@ textarea {
 #barra-funcionalidades {
 	background-color: #111;
 }
+/* Ajuste da pagina com o menu lateral */
+#rodape, #cabecalho, #barra-funcionalidades {
+	margin-left: 3.1em;	
+}
 
 #rodape {
 	background-color: #AAA;
-	
 }
 
 #rodape span{
@@ -178,7 +177,9 @@ textarea {
 }
 
 /* Fim Icones */
-
+.secao{
+	padding: 0.6em;	
+}
 /* Post */
 
 .post {
