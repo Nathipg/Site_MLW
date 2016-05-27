@@ -8,6 +8,16 @@ iframe {
 	width: 100%;
 }
 
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
 .secao {
 	padding: 1em;
 }
@@ -131,6 +141,9 @@ textarea {
 #menu ul li:hover span{
 	color: black;
 }
+#menu ul li:hover a{
+	color: black;
+}
 
 #barra-funcionalidades {
 	background-color: #111;
@@ -158,10 +171,6 @@ textarea {
 /* Fim das Animações */
 
 /* Icones */
-
-#rodape a:hover {
-	text-decoration: none;
-}
 
 .social-media {
 	font-size: 2em;

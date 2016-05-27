@@ -18,22 +18,13 @@
 
 </head>
 <body>
-	<!-- Audio load-->
-	<audio id="sommenuopen" preload="auto"><source src="sounds/smw_door_opens.mp3" type="audio/mpeg" /></audio>
-	<audio id="sommenuclose" preload="auto"><source src="sounds/smw_door_closed.mp3" type="audio/mpeg" /></audio>
-	<audio id="sommenuclick" preload="auto"><source src="sounds/smw_coin.mp3" type="audio/mpeg" /></audio>
-	<!-- Fim -->
-	
+	<script type="text/javascript">
+		incluirMenu();
+		incluirCabecalho();
+		incluirAudios();
+	</script>
 	<div id="conteiner">
-		<script type="text/javascript">
-			incluirMenu();
-		</script>
-
 		<div id="conteudo-pagina">
-			<script type="text/javascript">
-				incluirCabecalho();
-			</script>
-
 			<!-- Corpo -->
 			<div id="corpo" class="secao">
 				<div class="row">
@@ -62,12 +53,10 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Rodape -->
-			<script type="text/javascript">
-				incluirRodape();
-			</script>
 		</div>
 	</div>
+	<script type="text/javascript">
+		incluirRodape();
+	</script>
 </body>
 </html>
