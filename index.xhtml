@@ -14,6 +14,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/includes.js"></script>
 
 </head>
 <body>
@@ -24,62 +25,14 @@
 	<!-- Fim -->
 	
 	<div id="conteiner">
-		<!-- Menu -->
-		<div id="menu" class="menu-fechado">
-			<span class="menuclick"><span class="glyphicon glyphicon-play"></span></span>
-			<div class="texto-menu-aberto">
-			<h1>Menu</h1>
-				<ul>
-					<li><span class="glyphicon glyphicon-star"></span> Avaliação do Usuários</li>
-					<li><span class="glyphicon glyphicon-certificate"></span> Consoles</li>
-					<li><span class="glyphicon glyphicon-cog"></span> Hardware</li>
-					<li><span class="glyphicon glyphicon-user"></span> Cadastro</li>
-					<li><span class="glyphicon glyphicon-road"></span> Sobre nós</li>
-					<li><span class="glyphicon glyphicon-barcode"></span> Produtos</li>
-					<li><span class="glyphicon glyphicon-star"></span> Pacman</li>
-				</ul>
-			</div>
-		</div>
+		<script type="text/javascript">
+			incluirMenu();
+		</script>
 
 		<div id="conteudo-pagina">
-			<!-- Cabecalho -->
-			<div id="cabecalho" class="secao">
-				<div class="row text-center secao">
-					<div class="col-lg-1">
-						<img id="logohome" src="img/Logo1.png" alt="Logo" />
-					</div>
-					<div class="col-lg-11">
-						<h1 id="nomeSite">Wizard Games</h1>
-					</div>
-				</div>
-			</div>
-
-			<!-- Barra de Status e Funcionalidade -->
-			<div id="barra-funcionalidades" class="secao">
-				<div id="menu-atalhos" class="menu-fechado">
-					<div class="texto-menu-fechado">
-						<div class="row">
-							<div class="col-lg-12">
-								<span class="glyphicon glyphicon-menu-hamburger menuclick"></span>
-							</div>
-						</div>
-					</div>
-					<div class="texto-menu-aberto">
-						<div class="row">
-							<div class="col-lg-12">
-								<ul>
-									<li><a href="#">Perfil</a></li>
-									<li><a href="#">Carrinho</a></li>
-									<li><a href="#">Sugestões</a></li>
-									<li><a href="#">Aprovar Críticas</a></li>
-									<li><a href="#">Cadastrar Produtos</a></li>
-									<li><span id="somcontrol" class="glyphicon glyphicon-volume-up" data-toggle="tooltip" title="Desabilitar / Habilitar Som"></span></li>
-								</ul>								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<script type="text/javascript">
+				incluirCabecalho();
+			</script>
 
 			<!-- Corpo -->
 			<div id="corpo" class="secao">
@@ -111,38 +64,9 @@
 			</div>
 
 			<!-- Rodape -->
-			<div id="rodape" class="secao">
-				<div class="row" id="rodape">
-					<div class="col-lg-3">
-						<h3>Contato</h3>
-						<span class="glyphicon glyphicon-earphone"></span> &#160; +41 +423 239 63 01<br/>
-						<span class="glyphicon glyphicon-envelope"></span> &#160; contato@wizardgames.com.br
-					</div>
-					<div class="col-lg-3">
-						<h3>Redes Sociais</h3>
-						<a href="https://twitter.com" target="_blank">
-							<span class="socicon-twitter social-media"></span>
-						</a>
-						<a href="https://www.facebook.com/" target="_blank">
-							<span class="socicon-facebook social-media"></span>
-						</a>
-						<a href="https://plus.google.com" target="_blank">
-							<span class="socicon-googleplus social-media"></span>
-						</a>
-						<a href="https://spotify.com" target="_blank">
-							<span class="socicon-spotify social-media"></span>
-						</a>						
-					</div>
-					<div class="col-lg-2">
-						<h3>Endereço</h3>
-						<span class="glyphicon glyphicon-home"></span> &#160; Suíça, Liechtenstein <br/>
-						&#160;&#160;&#160;&#160;&#160;&#160; Vaduz - 9490
-					</div>
-					<div class="col-lg-4">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d608.6360446388463!2d9.52037434630057!3d47.14105024607922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b31665c517ef3%3A0x5143d97dca1b7b82!2s9490+Vaduz%2C+Liechtenstein!5e1!3m2!1spt-BR!2sbr!4v1463615251698"></iframe>
-					</div>
-				</div>
-			</div>
+			<script type="text/javascript">
+				incluirRodape();
+			</script>
 		</div>
 	</div>
 </body>
