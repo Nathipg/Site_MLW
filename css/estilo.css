@@ -73,7 +73,7 @@ textarea {
 #menu .menuclick{
 	cursor: pointer;
 	position:relative;
-	padding: 4.5em 0.2em 80em 0.2em;
+	padding: 4.5em 0em 80em 0em;
 }
 
 #menu .glyphicon-play {
@@ -146,7 +146,7 @@ textarea {
 }
 /* Ajuste da pagina com o menu lateral */
 #rodape, #cabecalho, #barra-funcionalidades {
-	margin-left: 3.1em;	
+	margin-left: 3.3em;	
 }
 
 #rodape {
@@ -225,7 +225,7 @@ textarea {
 
 /* Responsividade */
 
-@media (max-width: 719px) {
+@media (max-width: 720px){
 	#menu-atalhos .texto-menu-fechado {
 		display: block;
 	}
@@ -248,6 +248,11 @@ textarea {
 	#logohome {
 		height: 6em;
 		width: 6em;
+	}
+	
+	iframe {
+		display: block;
+		width: 150px;
 	}
 }
 
