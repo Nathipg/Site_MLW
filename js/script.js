@@ -1,5 +1,141 @@
 /* [Nathalia Pissuti e Laionel Lellis 15.05.2016] */
 
+/* Função definir sons */
+function playSound(tipo){
+	if($('#somcontrol').hasClass('glyphicon-volume-up')) {
+		switch (tipo) {
+			case 1:
+			$('#sommenuopen').trigger('play');
+			break;
+			case 2:
+			$('#sommenuclose').trigger('play');
+			break;
+			case 3:
+			$('#sommenuclick').trigger('play');
+			break;
+		}
+	}
+}
+
+function adicionarCarrinho() {
+	$('.post').append('\n\
+		<div class="row">\n\
+			<div class="col-lg-12">\n\
+				<div class="aviso-sucesso">\n\
+					<span>Produto adicionado ao carrinho!</span>\n\
+				</div>\n\
+			</div>\n\
+		</div>');
+}
+
+function avisoFalha(local, texto) {
+	$(local).append('\n\
+		<div class="row">\n\
+			<div class="col-lg-12">\n\
+				<div class="aviso-falha">\n\
+					<span>' + texto + '</span>\n\
+				</div>\n\
+			</div>\n\
+		</div>');
+}
+
+function avisoSucesso(local, texto) {
+	$(local).append('\n\
+		<div class="row">\n\
+			<div class="col-lg-12">\n\
+				<div class="aviso-sucesso">\n\
+					<span>' + texto + '</span>\n\
+				</div>\n\
+			</div>\n\
+		</div>');
+}
+
+function validarCadastro() {
+	$('.aviso-falha').remove();
+	var form = document.forms['form_cadastro'];
+
+	if(form.nome.value.trim() == '' || form.nome.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar um nome.');
+		return false;
+	}
+
+	if(form.sobrenome.value.trim() == '' || form.sobrenome.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar um sobrenome.');
+		return false;
+	}
+
+	if(form.cidade.value.trim() == '' || form.cidade.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma cidade.');
+		return false;
+	}
+
+	if(form.bairro.value.trim() == '' || form.bairro.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar um bairro.');
+		return false;
+	}
+
+	if(form.rua.value.trim() == '' || form.rua.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma rua.');
+		return false;
+	}
+
+	if(form.numero.value.trim() == '' || form.numero.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar um número.');
+		return false;
+	}
+
+	if(form.email.value.trim() == '' || form.email.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar um e-mail.');
+		return false;
+	}
+
+	if(form.senha.value.trim() == '' || form.senha.value == null) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma senha.');
+		return false;
+	}
+
+	avisoSucesso('form[name=form_cadastro]', 'Usuário cadastrado com sucesso.');
+}
+
+function validarAvaliacao() {
+	$('.aviso-falha').remove();
+	var form = document.forms['form_avaliacao'];
+
+	if(form.nome.value.trim() == '' || form.nome.value == null) {
+		avisoFalha('form[name=form_avaliacao]', 'É necessário informar um nome.');
+		return false;
+	}
+
+	if(form.email.value.trim() == '' || form.email.value == null) {
+		avisoFalha('form[name=form_avaliacao]', 'É necessário informar um e-mail.');
+		return false;
+	}
+
+	if(form.avaliacao.value.trim() == '' || form.avaliacao.value == null) {
+		avisoFalha('form[name=form_avaliacao]', 'É necessário comentar sua avaliação.');
+		return false;
+	}
+
+	if(form.nota.value.trim() == '' || form.nota.value == null) {
+		avisoFalha('form[name=form_avaliacao]', 'É necessário informar uma nota.');
+		return false;
+	}
+
+	avisoSucesso('form[name=form_avaliacao]', 'Avaliação enviada com sucesso.');
+}
+
+function validarNota(nota) {
+	if(nota < 0) {
+		nota = 0;
+	}
+
+	if(nota > 10) {
+		nota = 10;
+	}
+
+	return nota;
+}
+
 $(document).ready(function () {
 	/* Funcao responsavel por abrir o menu */
 	$('#menu .menuclick').click(function() {
@@ -22,54 +158,9 @@ $(document).ready(function () {
 			/* Som ao fechar */
 			playSound(2);
 		}
-		$('#menu').toggleClass('menu-fechado');		
+		$('#menu').toggleClass('menu-fechado');
 	});
-	
-	/* Função definir sons */
-	function playSound(tipo){
-		if($('#somcontrol').hasClass('glyphicon-volume-up')) {
-			switch (tipo) {
-				case 1:
-					$('#sommenuopen').trigger('play');
-					break;
-				case 2:
-					$('#sommenuclose').trigger('play');
-					break;
-				case 3:
-					$('#sommenuclick').trigger('play');
-					break;
-			}
-		}
-	};
-	
-	/*Click no menu: Link e Som*/
-	$('#menu ul li').click(function() {
-		playSound(3);
-		switch (this.id){
-			case "avaliacao":
-				$(location).attr('href', this.id + '.xhtml');
-				break;
-			case "console"	:
-				$(location).attr('href', this.id + '.xhtml');
-				break;
-			case "hardware"	:
-				$(location).attr('href', this.id + '.xhtml');
-				break;
-			case "cadastro":
-				$(location).attr('href', this.id + '.xhtml');
-				break;
-			case "sobre"	:
-				$(location).attr('href', this.id + '.xhtml');
-				break;
-			case "produtos"	:
-				$(location).attr('href', this.id + '.xhtml');
-				break;
-			case "pacman"	:
-				$(location).attr('href', this.id + '.xhtml');
-				break;
-		}
-	});
-	
+
 	/* Controle do som do site */
 	$('#somcontrol').click(function() {
 		if($(this).hasClass('glyphicon-volume-off')) {
@@ -78,7 +169,7 @@ $(document).ready(function () {
 			$(this).toggleClass('glyphicon-volume-off');
 		}
 	});
-	
+
 	/* Funcao responsavel por abrir o menu de atalhos */
 	$('#menu-atalhos .menuclick').click(function() {
 		if($('#menu-atalhos').hasClass('menu-fechado')) {
@@ -92,6 +183,6 @@ $(document).ready(function () {
 		}
 		$('#menu-atalhos').toggleClass('menu-fechado');
 	});
-	
-    $('[data-toggle="tooltip"]').tooltip();
+
+	$('[data-toggle="tooltip"]').tooltip();
 });

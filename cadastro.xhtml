@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="content-type" 
+	<meta http-equiv="content-type"
 	content="text/html;charset=utf-8" />
 	<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
 	<title>Wizard Games</title>
@@ -19,9 +19,9 @@
 </head>
 <body>
 	<script type="text/javascript">
-		incluirMenu();
-		incluirCabecalho();
-		incluirAudios();
+	incluirMenu();
+	incluirCabecalho();
+	incluirAudios();
 	</script>
 	<div id="conteiner">
 		<div id="conteudo-pagina">
@@ -32,7 +32,7 @@
 						<h1>Formulário de Cadastro</h1>
 					</div>
 				</div><br/>
-				<form action="">
+				<form name="form_cadastro" action="">
 					<div class="row">
 						<div class="col-lg-12">
 							<h2>Dados Pessoais</h2>
@@ -80,7 +80,7 @@
 							<div class="form-group">
 								<label>Cidade</label>
 								<input class="form-control" type="text" name="cidade" />
-							</div>							
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -88,7 +88,7 @@
 							<div class="form-group">
 								<label>Bairro</label>
 								<input class="form-control" type="text" name="bairro" />
-							</div>							
+							</div>
 						</div>
 						<div class="col-lg-5">
 							<div class="form-group">
@@ -126,7 +126,38 @@
 
 					<div class="row">
 						<div class="col-lg-12">
-							<input type="submit" class="btn btn-primary" value="Cadastrar" />
+							<h2>Senha</h2>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label>Senha</label>
+								<input class="form-control" type="password" name="senha" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<h2>Notícias</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label>Autorização</label><br/>
+								<input type="radio" name="autorizacao_noticias" /> Aceito receber notícias no e-mail cadastrado.
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<input type="button" class="btn btn-primary" value="Cadastrar" onclick="validarCadastro()" />
+							</div>
 						</div>
 					</div>
 				</form>
@@ -134,7 +165,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		incluirRodape();
+	incluirRodape();
 	</script>
 </body>
 </html>

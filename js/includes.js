@@ -6,16 +6,26 @@ function incluirMenu() {
 			<div class="texto-menu-aberto">\n\
 			<h1>Menu</h1>\n\
 				<ul>\n\
-					<li id="avaliacao"><span class="glyphicon glyphicon-star"></span> Avaliação do Usuários</li>\n\
-					<li id="consoles"><span class="glyphicon glyphicon-certificate"></span> Consoles</li>\n\
-					<li id="hardware"><span class="glyphicon glyphicon-cog"></span> Hardware</li>\n\
-					<li id="cadastro"><span class="glyphicon glyphicon-user"></span> Cadastro</li>\n\
-					<li id="sobre"><span class="glyphicon glyphicon-road"></span> Sobre nós</li>\n\
-					<li id="produtos"><span class="glyphicon glyphicon-barcode"></span> Produtos</li>\n\
-					<li id="pacman"><span class="glyphicon glyphicon-star"></span> Pacman</li>\n\
+					<a href="avaliacao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-star"></span> Avaliação dos Usuários</li></a>\n\
+					<a href="consoles.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-certificate"></span> Consoles</li></a>\n\
+					<a href="hardware.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-cog"></span> Hardware</li></a>\n\
+					<a href="cadastro.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user"></span> Cadastro</li></a>\n\
+					<a href="sobre.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-road"></span> Sobre nós</li></a>\n\
+					<a href="produtos.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-barcode"></span> Produtos</li></a>\n\
+					<a href="pacman.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-star"></span> Pacman</li></a>\n\
 				</ul>\n\
 			</div>\n\
 		</div>');
+
+	/*Click no menu: Link e Som*/
+	$('.coin-sound').click(function(event) {
+		link = $(this).attr('href');
+		event.preventDefault();
+		playSound(3);
+		setTimeout(function() {
+			window.location = link;
+		}, 600);
+	});
 }
 
 function incluirCabecalho () {

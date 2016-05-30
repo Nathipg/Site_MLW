@@ -178,7 +178,7 @@ textarea {
 
 /* Fim Icones */
 .secao{
-	padding: 0.6em;	
+	padding: 0.6em;
 }
 /* Post */
 
@@ -189,7 +189,39 @@ textarea {
 	padding: 1em;
 }
 
+.post iframe {
+	height: 315px;
+	width: 560px;
+	display: block;
+	margin: 0 auto;
+}
+
+.nota {
+	font-size: 10em;
+	text-align: center;
+}
+
 /* Fim Post */
+
+/* Aviso */
+.aviso-sucesso {
+	border-radius: 1em;
+	padding: 1em;
+	background-color: #32CD32;
+	font-weight: bold;
+	color: white;
+	margin: 1em 0em 1em 0em;
+}
+
+.aviso-falha {
+	border-radius: 1em;
+	padding: 1em;
+	background-color: #FF6347;
+	font-weight: bold;
+	color: white;
+	margin: 1em 0em 1em 0em;
+}
+/* Fim Aviso */
 
 /* Responsividade */
 
