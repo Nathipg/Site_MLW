@@ -13,6 +13,9 @@ a {
 	color: white;
 }
 
+a:visited{
+	text-decoration: none;
+}
 a:hover {
 	text-decoration: none;
 	color: black;
@@ -96,7 +99,6 @@ textarea {
 }
 
 #menu-atalhos a, #menu-atalhos span {
-	font-style: none;
 	color: white;
 }
 
@@ -160,7 +162,7 @@ textarea {
 /* Fim Cores*/
 
 /* Animações: ass:Sra Eu tenho tempo*/
-@keyframes rotateicon{
+@keyframes rotateicon {
 	100%	{-webkit-transform: rotateY(1440deg);}
 	100%	{-o-transform: rotateY(1440deg);}
 	100%	{-ms-transform: rotateY(1440deg);}
@@ -249,11 +251,7 @@ textarea {
 		height: 6em;
 		width: 6em;
 	}
-	
-	iframe {
-		display: block;
-		width: 150px;
-	}
+
 }
 
 @media (min-width: 720px) {
