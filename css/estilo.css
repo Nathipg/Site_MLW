@@ -4,17 +4,20 @@ html, body {
 	text-align: justify;
 }
 
-iframe {
-	width: 100%;
+h1 {
+	text-align: center;
 }
-
+ .post h1{
+	text-align: left;
+ }
 a {
 	text-decoration: none;
 	color: white;
 }
 
-a:visited{
+a:visited, a:active, a:link{
 	text-decoration: none;
+	color: white;
 }
 a:hover {
 	text-decoration: none;
@@ -157,9 +160,19 @@ textarea {
 
 #rodape span{
 	color: white;
-	
+}
+
+#rodape iframe {
+	width: 100%;
 }
 /* Fim Cores*/
+
+.conteudo-margem {
+	margin: 2em;
+}
+.nota {
+	text-align: center;	
+}
 
 /* Animações: ass:Sra Eu tenho tempo*/
 @keyframes rotateicon {
@@ -192,8 +205,8 @@ textarea {
 }
 
 .post iframe {
-	height: 315px;
-	width: 560px;
+	height: auto;
+	width: auto;
 	display: block;
 	margin: 0 auto;
 }
@@ -251,7 +264,16 @@ textarea {
 		height: 6em;
 		width: 6em;
 	}
-
+	
+	h1{
+		font-size: 2em;	
+	}
+	
+	.btn {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 0.5em; 
+	}
 }
 
 @media (min-width: 720px) {

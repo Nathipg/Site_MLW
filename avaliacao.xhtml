@@ -34,10 +34,10 @@
 						<div class="post">
 							<div class="row">
 								<div class="col-lg-3">
-									<span class="nota">10</span>
+									<p class="nota">10</p>
 								</div>
 								<div class="col-lg-9">
-									<h1>Nome do usuário</h1>
+									<h1 >Nome do usuário</h1>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non eleifend nunc, in cursus risus. Suspendisse gravida urna sem, at tempus tellus fermentum nec. Vivamus felis metus, elementum eget dolor vitae, consequat pretium nulla. In vel posuere dolor. Sed sit amet porttitor ligula, id sollicitudin ipsum. Suspendisse elementum eros leo, a porttitor est pellentesque quis. Fusce ornare risus id commodo congue. Nulla facilisi. Quisque imperdiet augue vel imperdiet lobortis.</p>
 								</div>
 							</div>
@@ -78,7 +78,8 @@
 											<label>Nota</label>
 											<input class="form-control" type="number" name="nota"
 											onblur="this.value = validarNota(this.value);"
-											onkeyup="this.value = validarNota(this.value);" />
+											onkeyup="this.value = validarNota(this.value);"
+											onchange="this.value = validarNota(this.value);" />
 										</div>
 									</div>
 								</div>

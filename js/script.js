@@ -163,11 +163,8 @@ $(document).ready(function () {
 
 	/* Controle do som do site */
 	$('#somcontrol').click(function() {
-		if($(this).hasClass('glyphicon-volume-off')) {
-			$(this).toggleClass('glyphicon-volume-up');
-		} else {
-			$(this).toggleClass('glyphicon-volume-off');
-		}
+		$(this).toggleClass('glyphicon-volume-up');
+		$(this).toggleClass('glyphicon-volume-off');
 	});
 
 	/* Funcao responsavel por abrir o menu de atalhos */
