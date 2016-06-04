@@ -170,11 +170,11 @@ $(document).ready(function () {
 	/* Funcao responsavel por abrir o menu de atalhos */
 	$('#menu-atalhos .menuclick').click(function() {
 		if($('#menu-atalhos').hasClass('menu-fechado')) {
-			$('#menu-atalhos .texto-menu-aberto').show();
+			$('#menu-atalhos .texto-menu-aberto').show(900);
 			/* Som ao abrir */
 			playSound(1);
 		} else {
-			$('#menu-atalhos .texto-menu-aberto').hide();
+			$('#menu-atalhos .texto-menu-aberto').hide(300);
 			/* Som ao fechar */
 			playSound(2);
 		}
