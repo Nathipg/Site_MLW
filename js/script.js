@@ -111,6 +111,17 @@ function validarAvaliacao() {
 		return false;
 	}
 
+	if(form.email.value.indexOf('@') == -1
+		|| form.email.value.indexOf(' ') != -1
+		|| form.email.value.split('@')[0].length == 0
+		|| form.email.value.split('@')[1].length == 0
+		|| form.email.value.split('@')[1].indexOf('.') == -1
+		|| form.email.value.split('@')[1].split('.')[0].length == 0
+		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
+		avisoFalha('form[name=form_avaliacao]', 'É necessário informar um e-mail válido.');
+		return false;
+	}
+
 	if(form.avaliacao.value.trim() == '' || form.avaliacao.value == null) {
 		avisoFalha('form[name=form_avaliacao]', 'É necessário comentar sua avaliação.');
 		return false;
@@ -120,6 +131,19 @@ function validarAvaliacao() {
 		avisoFalha('form[name=form_avaliacao]', 'É necessário informar uma nota.');
 		return false;
 	}
+
+	$("#conteiner-avaliacoes").append('\n\
+		<div class="post">\n\
+			<div class="row">\n\
+				<div class="col-lg-3">\n\
+					<p class="nota">' + form.nota.value + '</p>\n\
+				</div>\n\
+				<div class="col-lg-9">\n\
+					<h1>' + form.nome.value + '</h1>\n\
+					<p>' + form.nome.value + '</p>\n\
+				</div>\n\
+			</div>\n\
+		</div>');
 
 	avisoSucesso('form[name=form_avaliacao]', 'Avaliação enviada com sucesso.');
 }
