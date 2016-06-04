@@ -89,6 +89,17 @@ function validarCadastro() {
 		return false;
 	}
 
+	if(form.email.value.indexOf('@') == -1
+		|| form.email.value.indexOf(' ') != -1
+		|| form.email.value.split('@')[0].length == 0
+		|| form.email.value.split('@')[1].length == 0
+		|| form.email.value.split('@')[1].indexOf('.') == -1
+		|| form.email.value.split('@')[1].split('.')[0].length == 0
+		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
+		avisoFalha('form[name=form_cadastro]', 'É necessário informar um e-mail válido.');
+		return false;
+	}
+
 	if(form.senha.value.trim() == '' || form.senha.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma senha.');
 		return false;
