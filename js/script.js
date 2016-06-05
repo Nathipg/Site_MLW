@@ -215,6 +215,7 @@ $(document).ready(function () {
 		}
 		$('#menu-atalhos').toggleClass('menu-fechado');
 	});
-
+	
+	/* Tooltip */
 	$('[data-toggle="tooltip"]').tooltip();
 });
