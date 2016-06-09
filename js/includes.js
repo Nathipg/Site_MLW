@@ -92,7 +92,20 @@ function incluirRodape () {
 		</div>\n\
 		</div>');
 }
-
+function incluirModal(){
+	$('body').prepend('<!-- incluido no carrinho -->\n\
+	<div id="modalIncCarrinho" class="modal modal-center">\n\
+	  <!-- Modal content -->\n\
+		<div class="modal-content">\n\
+			<div class="modal-header">\n\
+			  <h2>Obrigado!</h2>\n\
+			</div>\n\
+			<div class="modal-body">\n\
+			  <h3>Adicionado ao carrinho.</h3>\n\
+			</div>\n\
+		</div>\n\
+	</div>');
+}
 function incluirAudios() {
 	$('body').prepend('<audio id="sommenuopen" preload="auto"><source src="sounds/smw_door_opens.mp3" type="audio/mpeg" /></audio>\n\
 		<audio id="sommenuclose" preload="auto"><source src="sounds/smw_door_closed.mp3" type="audio/mpeg" /></audio>\n\

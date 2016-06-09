@@ -7,9 +7,7 @@ html, body {
 h1 {
 	text-align: center;
 }
- .post h1{
-	text-align: left;
- }
+
 a {
 	text-decoration: none;
 	color: white;
@@ -196,7 +194,11 @@ textarea {
 	padding: 0.6em;
 }
 /* Post */
-
+ 
+ .post h1{
+	text-align: left;
+ }
+ 
 .post {
 	background: rgba(0, 0, 0, 0.1);
 	border-radius: 1em;
@@ -205,12 +207,17 @@ textarea {
 }
 
 .post iframe {
-	height: auto;
-	width: auto;
-	display: block;
-	margin: 0 auto;
+	margin: auto;
+	width: 90%;
+	height: 16em;
 }
 
+.post img{
+	margin: 2em 0em 2em 0em;
+}
+.valingmiddle{
+	margin: auto;
+}
 .nota {
 	font-size: 10em;
 	text-align: center;
@@ -227,7 +234,6 @@ textarea {
 	color: white;
 	margin: 1em 0em 1em 0em;
 }
-
 .aviso-falha {
 	border-radius: 1em;
 	padding: 1em;
@@ -237,6 +243,17 @@ textarea {
 	margin: 1em 0em 1em 0em;
 }
 /* Fim Aviso */
+
+/*Confirmação carrinho*/
+.modal-center{
+	margin: auto;
+	height: 50%;
+	width: 50%;
+}
+.modal-content{
+	background-color: #32CD32;
+}
+/* Fim Confirmação */
 
 /* Responsividade */
 
@@ -288,3 +305,4 @@ textarea {
     font-family: Viner Hand ITC;
     src: url("../fonts/Viner_Hand_ITC.ttf");
 }
+

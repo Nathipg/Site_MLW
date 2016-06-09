@@ -18,14 +18,10 @@ function playSound(tipo){
 }
 
 function adicionarCarrinho() {
-	$('.post').append('\n\
-		<div class="row">\n\
-			<div class="col-lg-12">\n\
-				<div class="aviso-sucesso">\n\
-					<span>Produto adicionado ao carrinho!</span>\n\
-				</div>\n\
-			</div>\n\
-		</div>');
+	$('#modalIncCarrinho').css("display", "block");
+	setTimeout(function(){
+		$('#modalIncCarrinho').css("display", "none");
+	}, 3000);
 }
 
 function avisoFalha(local, texto) {
@@ -56,36 +52,43 @@ function validarCadastro() {
 
 	if(form.nome.value.trim() == '' || form.nome.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar um nome.');
+		form.nome.focus();
 		return false;
 	}
 
 	if(form.sobrenome.value.trim() == '' || form.sobrenome.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar um sobrenome.');
+		form.sobrenome.focus();
 		return false;
 	}
 
 	if(form.cidade.value.trim() == '' || form.cidade.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma cidade.');
+		form.cidade.focus();
 		return false;
 	}
 
 	if(form.bairro.value.trim() == '' || form.bairro.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar um bairro.');
+		form.bairro.focus();
 		return false;
 	}
 
 	if(form.rua.value.trim() == '' || form.rua.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma rua.');
+		form.rua.focus();
 		return false;
 	}
 
 	if(form.numero.value.trim() == '' || form.numero.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar um número.');
+		form.numero.focus();
 		return false;
 	}
 
 	if(form.email.value.trim() == '' || form.email.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar um e-mail.');
+		form.email.focus();
 		return false;
 	}
 
@@ -97,11 +100,17 @@ function validarCadastro() {
 		|| form.email.value.split('@')[1].split('.')[0].length == 0
 		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar um e-mail válido.');
+		form.email.focus();
 		return false;
 	}
 
 	if(form.senha.value.trim() == '' || form.senha.value == null) {
 		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma senha.');
+		form.senha.focus();
+		return false;
+	}else if(form.senha.value != form.confsenha.value){
+		avisoFalha('form[name=form_cadastro]', 'As senhas devem ser iguais.');
+		form.confsenha.focus();
 		return false;
 	}
 
@@ -151,7 +160,7 @@ function validarAvaliacao() {
 				</div>\n\
 				<div class="col-lg-9">\n\
 					<h1>' + form.nome.value + '</h1>\n\
-					<p>' + form.nome.value + '</p>\n\
+					<p>' + form.avaliacao.value + '</p>\n\
 				</div>\n\
 			</div>\n\
 		</div>');
