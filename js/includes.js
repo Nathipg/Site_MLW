@@ -2,16 +2,15 @@
 
 function incluirMenu() {
 	$('body').append('<div id="menu" class="menu-fechado">\n\
-		<span class="menuclick"><span class="glyphicon glyphicon-play"></span></span>\n\
+		<span class="menuclick" title="Click para abrir/fechar o menu"><span class="glyphicon glyphicon-play"></span></span>\n\
 		<div class="texto-menu-aberto">\n\
 		<h1>Menu</h1>\n\
 		<ul>\n\
-		<a href="avaliacao.xhtml"><li><span class="glyphicon glyphicon-star"></span> Avaliação dos Usuários</li></a>\n\
+		<a href="avaliacao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-star"></span> Avaliação dos Usuários</li></a>\n\
 		<a href="cadastro.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user"></span> Cadastro</li></a>\n\
 		<a href="consoles.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-certificate"></span> Consoles</li></a>\n\
 		<a href="acessorios.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-cog"></span> Acessórios</li></a>\n\
 		<a href="games.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-barcode"></span> Games</li></a>\n\
-		<a href="pacman.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-star"></span> Pacman</li></a>\n\
 		<a href="sobre.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-road"></span> Sobre nós</li></a>\n\
 		</ul>\n\
 		</div>\n\
@@ -42,14 +41,14 @@ function incluirCabecalho () {
 		<div class="row">\n\
 		<div class="col-lg-12">\n\
 		<ul>\n\
-		<li><a href="index.xhtml" class="coin-sound"><span class="glyphicon glyphicon-home" /> Início</a></li>\n\
-		<li><a href="#" class="coin-sound"><span class="glyphicon glyphicon-lock" /> Login</a></li>\n\
-		<li><a href="perfil.xhtml" class="coin-sound"><span class="glyphicon glyphicon-user" /> Perfil</a></li>\n\
-		<li><a href="#" class="coin-sound"><span class="glyphicon glyphicon-shopping-cart" /> Carrinho</a></li>\n\
-		<li><a href="#" class="coin-sound"><span class="glyphicon glyphicon-pencil" /> Sugestões</a></li>\n\
-		<li><a href="#" class="coin-sound"><span class="glyphicon glyphicon-ok" /> Aprovar Críticas</a></li>\n\
-		<li><a href="#" class="coin-sound"><span class="glyphicon glyphicon-list-alt" /> Cadastrar Produtos</a></li>\n\
-		<li><span id="somcontrol" class="glyphicon glyphicon-volume-up" data-toggle="tooltip" title="Desabilitar / Habilitar Som" /></li>\n\
+		<a href="index.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-home" /> Início</li></a>\n\
+		<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-lock" /> Login</li></a>\n\
+		<a href="perfil.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user" /> Perfil</li></a>\n\
+		<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-shopping-cart" /> Carrinho</li></a>\n\
+		<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Sugestões</li></a>\n\
+		<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-ok" /> Aprovar Críticas</li></a>\n\
+		<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-list-alt" /> Cadastrar Produtos</li></a>\n\
+		<button id="somcontrol" class="glyphicon glyphicon-volume-up" data-toggle="tooltip" title="Desabilitar / Habilitar Som"></button>\n\
 		</ul>\n\
 		</div>\n\
 		</div>\n\

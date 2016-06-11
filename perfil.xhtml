@@ -18,7 +18,7 @@
 	<script src="js/includes.js" type="text/javascript" />
 
 </head>
-<body>
+<body onload="userInfo()">
 	<script type="text/javascript">
 		incluirMenu();
 		incluirCabecalho();
@@ -28,30 +28,35 @@
 		<div id="conteudo-pagina">
 			<!-- Corpo -->
 			<div id="corpo" class="secao">
+				<br />
 				<div class="row">
-					<div class="col-lg-12">
-						<h1>Apollo Pissuti</h1>
+					<div class="col-lg-3">
+						<div class="fotoperfil post">
+							<img src="" id="userFoto" class="img-responsive meio" alt="Sua foto aqui"/>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<h2>Endereço</h2>
-						Brasil, SP<br/>
-						São João da Boa Vista<br/>
-						Sapato Branco<br/>
-						Rua Dos Reis, 2011
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<h2>Telefone</h2>
-						(17) 3631-0477
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<h2>E-mail</h2>
-						apollo@pissuti.com.br
+					<div class="col-lg-9">
+						<div class="row post">
+							<div class="col-lg-12">
+								<h1 id="userName">Apollo Pissuti</h1>
+							</div>
+						</div>
+						<div class="row post">
+							<div class="col-lg-6">
+								<h2>Endereço</h2>
+								<span id="userEnd">Rua Dos Reis</span><span>, </span><span id="userNum">2011</span><br />
+								<span id="userBairro">Sapato Branco</span><br />
+								<span id="userCidade">São João da Boa Vista</span><span> - </span><span id="userEstado">SP</span><br/>
+								<span id="userPais">Brasil</span><br/>						
+								<span id="userCep">00.000-000</span>
+							</div>
+							<div class="col-lg-6">
+								<h2>Telefone</h2>							
+								<span id="userTel">(17) 3631-0477</span>
+								<h2>E-mail</h2>
+								<span id="userEmail">apollo@pissuti.com.br</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

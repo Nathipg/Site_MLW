@@ -179,6 +179,20 @@ function validarNota(nota) {
 
 	return nota;
 }
+/* Função dados do usuário*/
+function userInfo(){
+	$('#userFoto').attr("src","img/logo2.png")
+	$('#userName').text("Seu nome aqui");
+	$('#userEnd').text("Endereço");
+	$('#userNum').text("Numero");
+	$('#userBairro').text("Bairro");
+	$('#userCidade').text("Cidade");
+	$('#userEstado').text("Estado");
+	$('#userPais').text("Pais");
+	$('#userCep').text("00.000-000");
+	$('#userTel').text("(00) 0000-0000");
+	$('#userEmail').text("email@email.com");
+}
 
 $(document).ready(function () {
 	/* Funcao responsavel por abrir o menu */
@@ -224,7 +238,7 @@ $(document).ready(function () {
 		}
 		$('#menu-atalhos').toggleClass('menu-fechado');
 	});
-	
+
 	/* Tooltip */
 	$('[data-toggle="tooltip"]').tooltip();
 });
