@@ -53,23 +53,24 @@ function validarLogin() {
 		|| form.usuario.value.split('@')[1].split('.')[0].length == 0
 		|| form.usuario.value.split('@')[1].split('.')[1].length == 0) {
 		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
-	form.usuario.focus();
-	return false;
-}
+		form.usuario.focus();
+		return false;
+	}
 
-if(form.senha.value.trim() == '' || form.senha.value == null) {
-	mostrarAviso('falha', 'É necessário informar uma senha.');
-	form.senha.focus();
-	return false;
-}
+	if(form.senha.value.trim() == '' || form.senha.value == null) {
+		mostrarAviso('falha', 'É necessário informar uma senha.');
+		form.senha.focus();
+		return false;
+	}
 
-if(form.usuario.value != 'usu@usu.com'
-	|| form.senha.value != 'senha') {
-	mostrarAviso('falha', 'Usuário ou senha inválido.');
-return false;
-}
-
-window.location = "perfil.xhtml";
+	if(form.usuario.value != 'usu@usu.com'
+		|| form.senha.value != 'senha') {
+		mostrarAviso('falha', 'Usuário ou senha inválido.');
+		return false;
+	} else {
+		mostrarAviso('sucesso', 'Bem vindo ' + form.usuario.value + '!');
+	}
+	setTimeout(function(){window.location = "perfil.xhtml"}, 3100);
 }
 
 function validarCadastro() {
