@@ -26,6 +26,10 @@ textarea {
 	resize: none;
 }
 
+.glyphicon {
+	cursor: pointer;
+}
+
 #nomeSite{
 	font-size: 9em;
 	font-family: "Viner Hand ITC";
@@ -316,6 +320,55 @@ textarea {
 	float: right;
 	margin: 0em 0em 0em 1em;
 }
+
+/* Carrinho */
+.carrinho img {
+	max-height: 100px;
+}
+
+.carrinho .glyphicon {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 0.5em;
+}
+
+.carrinho .glyphicon-remove {
+	color: red;
+}
+
+table {
+	width: 100%;
+}
+
+td, th{
+	padding: 1em;
+}
+
+thead, tfoot {
+	color: white;
+	background-color: black;
+}
+
+tbody {
+	background-color: white;
+}
+
+thead th:first-child {
+	border-top-left-radius: 0.5em;
+}
+
+tfoot th:first-child {
+	border-bottom-left-radius: 0.5em;
+}
+
+tfoot th:last-child {
+	border-bottom-right-radius: 0.5em;
+}
+
+thead th:last-child {
+	border-top-right-radius: 0.5em;
+}
+/* Fim Carrinho */
 
 /* Responsividade */
 

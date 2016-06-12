@@ -53,23 +53,23 @@ function validarLogin() {
 		|| form.usuario.value.split('@')[1].split('.')[0].length == 0
 		|| form.usuario.value.split('@')[1].split('.')[1].length == 0) {
 		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
-		form.usuario.focus();
-		return false;
-	}
+	form.usuario.focus();
+	return false;
+}
 
-	if(form.senha.value.trim() == '' || form.senha.value == null) {
-		mostrarAviso('falha', 'É necessário informar uma senha.');
-		form.senha.focus();
-		return false;
-	}
+if(form.senha.value.trim() == '' || form.senha.value == null) {
+	mostrarAviso('falha', 'É necessário informar uma senha.');
+	form.senha.focus();
+	return false;
+}
 
-	if(form.usuario.value != 'usu@usu.com'
-		|| form.senha.value != 'senha') {
-		mostrarAviso('falha', 'Usuário ou senha inválido.');
-		return false;
-	}
+if(form.usuario.value != 'usu@usu.com'
+	|| form.senha.value != 'senha') {
+	mostrarAviso('falha', 'Usuário ou senha inválido.');
+return false;
+}
 
-	window.location = "perfil.xhtml";
+window.location = "perfil.xhtml";
 }
 
 function validarCadastro() {
@@ -125,21 +125,21 @@ function validarCadastro() {
 		|| form.email.value.split('@')[1].split('.')[0].length == 0
 		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
 		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
-		form.email.focus();
-		return false;
-	}
+	form.email.focus();
+	return false;
+}
 
-	if(form.senha.value.trim() == '' || form.senha.value == null) {
-		mostrarAviso('falha', 'É necessário informar uma senha.');
-		form.senha.focus();
-		return false;
-	} else if(form.senha.value != form.confsenha.value){
-		mostrarAviso('falha', 'As senhas devem ser iguais.');
-		form.confsenha.focus();
-		return false;
-	}
+if(form.senha.value.trim() == '' || form.senha.value == null) {
+	mostrarAviso('falha', 'É necessário informar uma senha.');
+	form.senha.focus();
+	return false;
+} else if(form.senha.value != form.confsenha.value){
+	mostrarAviso('falha', 'As senhas devem ser iguais.');
+	form.confsenha.focus();
+	return false;
+}
 
-	mostrarAviso('sucesso', 'Usuário cadastrado com sucesso.');
+mostrarAviso('sucesso', 'Usuário cadastrado com sucesso.');
 }
 
 function validarAvaliacao() {
@@ -163,33 +163,33 @@ function validarAvaliacao() {
 		|| form.email.value.split('@')[1].split('.')[0].length == 0
 		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
 		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
-		return false;
-	}
+	return false;
+}
 
-	if(form.avaliacao.value.trim() == '' || form.avaliacao.value == null) {
-		mostrarAviso('falha', 'É necessário comentar sua avaliação.');
-		return false;
-	}
+if(form.avaliacao.value.trim() == '' || form.avaliacao.value == null) {
+	mostrarAviso('falha', 'É necessário comentar sua avaliação.');
+	return false;
+}
 
-	if(form.nota.value.trim() == '' || form.nota.value == null) {
-		mostrarAviso('falha', 'É necessário informar uma nota.');
-		return false;
-	}
+if(form.nota.value.trim() == '' || form.nota.value == null) {
+	mostrarAviso('falha', 'É necessário informar uma nota.');
+	return false;
+}
 
-	$("#conteiner-avaliacoes").append('\n\
-		<div class="post">\n\
-			<div class="row">\n\
-				<div class="col-lg-3">\n\
-					<p class="nota">' + form.nota.value + '</p>\n\
-				</div>\n\
-				<div class="col-lg-9">\n\
-					<h1>' + form.nome.value + '</h1>\n\
-					<p>' + form.avaliacao.value + '</p>\n\
-				</div>\n\
-			</div>\n\
-		</div>');
+$("#conteiner-avaliacoes").append('\n\
+	<div class="post">\n\
+	<div class="row">\n\
+	<div class="col-lg-3">\n\
+	<p class="nota">' + form.nota.value + '</p>\n\
+	</div>\n\
+	<div class="col-lg-9">\n\
+	<h1>' + form.nome.value + '</h1>\n\
+	<p>' + form.avaliacao.value + '</p>\n\
+	</div>\n\
+	</div>\n\
+	</div>');
 
-	avisoSucesso('form[name=form_avaliacao]', 'Avaliação enviada com sucesso.');
+avisoSucesso('form[name=form_avaliacao]', 'Avaliação enviada com sucesso.');
 }
 
 function validarSugestao() {
@@ -221,17 +221,47 @@ function validarSugestao() {
 		|| form.email.value.split('@')[1].split('.')[0].length == 0
 		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
 		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
-		form.email.focus();
+	form.email.focus();
+	return false;
+}
+
+if(form.sugestao.value.trim() == '' || form.sugestao.value == null) {
+	mostrarAviso('falha', 'É necessário informar uma sugestão.');
+	form.sugestao.focus();
+	return false;
+}
+
+mostrarAviso('sucesso', 'Segestão cadastrada com sucesso.');
+}
+
+function validarProduto() {
+	var form = document.forms['form_produto'];
+
+	if(form.nome.value.trim() == '' || form.nome.value == null) {
+		mostrarAviso('falha', 'É necessário informar um nome.');
+		form.nome.focus();
 		return false;
 	}
 
-	if(form.sugestao.value.trim() == '' || form.sugestao.value == null) {
-		mostrarAviso('falha', 'É necessário informar uma sugestão.');
-		form.sugestao.focus();
+	if(form.codigo.value.trim() == '' || form.codigo.value == null) {
+		mostrarAviso('falha', 'É necessário informar um código.');
+		form.codigo.focus();
 		return false;
 	}
 
-	mostrarAviso('sucesso', 'Segestão cadastrada com sucesso.');
+	if(form.preco.value.trim() == '' || form.preco.value == null) {
+		mostrarAviso('falha', 'É necessário informar um preço.');
+		form.preco.focus();
+		return false;
+	}
+
+	if(form.descricao.value.trim() == '' || form.descricao.value == null) {
+		mostrarAviso('falha', 'É necessário informar uma descrição.');
+		form.descricao.focus();
+		return false;
+	}
+
+	mostrarAviso('sucesso', 'Produto cadastrado com sucesso.');
 }
 
 function validarNota(nota) {
@@ -258,6 +288,26 @@ function userInfo(){
 	$('#userCep').text("00.000-000");
 	$('#userTel').text("(00) 0000-0000");
 	$('#userEmail').text("email@email.com");
+}
+
+function finalizarCompra() {
+	mostrarAviso('sucesso', 'O boleto foi enviado para o e-mail cadastrado');
+	setTimeout(function() {
+		window.location = 'perfil.xhtml';
+	}, 3000);
+}
+
+function removerItemCarrinho(id) {
+	$('#linha' + id).remove();
+
+	if($('.carrinho table tbody').children().length == 0) {
+		$('.carrinho table tbody').append('\n\
+			<tr>\n\
+				<td colspan="4">Nenhum item no carrinho</td>\n\
+			</tr>');
+	}
+
+	mostrarAviso('sucesso', 'Item removido');
 }
 
 $(document).ready(function () {

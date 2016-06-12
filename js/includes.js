@@ -47,10 +47,9 @@ function incluirCabecalho () {
 								<a href="index.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-home" /> Início</li></a>\n\
 								<a href="#" data-toggle="modal" data-target="#myModal" class="coin-sound"><li><span class="glyphicon glyphicon-lock" /> Login</li></a>\n\
 								<a href="perfil.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user" /> Perfil</li></a>\n\
-								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-shopping-cart" /> Carrinho</li></a>\n\
+								<a href="carrinho.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-shopping-cart" /> Carrinho</li></a>\n\
 								<a href="sugestao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Sugestões</li></a>\n\
-								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-ok" /> Aprovar Críticas</li></a>\n\
-								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-list-alt" /> Cadastrar Produtos</li></a>\n\
+								<a href="cadastrar_produto.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-list-alt" /> Cadastrar Produtos</li></a>\n\
 								<button id="somcontrol" class="glyphicon glyphicon-volume-up" data-toggle="tooltip" title="Desabilitar / Habilitar Som"></button>\n\
 							</ul>\n\
 						</div>\n\
