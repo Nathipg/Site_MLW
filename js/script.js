@@ -17,85 +17,102 @@ function playSound(tipo){
 	}
 }
 
-function adicionarCarrinho() {
-	$('#modalIncCarrinho').css("display", "block");
+function mostrarAviso(tipo, mensagem) {
+	$('#aviso').addClass('aviso-' + tipo);
+	$('#aviso .titulo').html(tipo[0].toUpperCase() + tipo.substr(1));
+	$('#aviso .mensagem').html(mensagem);
+	$('#aviso').css("display", "block");
 	var porcentagem = 100;
 	setInterval(function() {
 		if(porcentagem != 0) {
 			porcentagem--;
-			$('.modal-sucesso .barra-progresso').css('width', porcentagem + '%');
+			$('.aviso .barra-progresso').css('width', porcentagem + '%');
 		}
 	}, 30);
 	setTimeout(function(){
-		$('#modalIncCarrinho').css("display", "none");
-		$('.modal-sucesso .barra-progresso').css('width', '100%');
+		$('#aviso').css("display", "none");
+		$('.aviso .barra-progresso').css('width', '100%');
+		$('#aviso').removeClass('aviso-' + tipo);
 	}, 3000);
 }
 
-function avisoFalha(local, texto) {
-	$(local).append('\n\
-		<div class="row">\n\
-			<div class="col-lg-12">\n\
-				<div class="aviso-falha">\n\
-					<span>' + texto + '</span>\n\
-				</div>\n\
-			</div>\n\
-		</div>');
-}
+function validarLogin() {
+	var form = document.forms['formulario_login'];
 
-function avisoSucesso(local, texto) {
-	$(local).append('\n\
-		<div class="row">\n\
-			<div class="col-lg-12">\n\
-				<div class="aviso-sucesso">\n\
-					<span>' + texto + '</span>\n\
-				</div>\n\
-			</div>\n\
-		</div>');
+	if(form.usuario.value.trim() == '' || form.usuario.value == null) {
+		mostrarAviso('falha', 'É necessário informar um e-mail.');
+		form.usuario.focus();
+		return false;
+	}
+
+	if(form.usuario.value.indexOf('@') == -1
+		|| form.usuario.value.indexOf(' ') != -1
+		|| form.usuario.value.split('@')[0].length == 0
+		|| form.usuario.value.split('@')[1].length == 0
+		|| form.usuario.value.split('@')[1].indexOf('.') == -1
+		|| form.usuario.value.split('@')[1].split('.')[0].length == 0
+		|| form.usuario.value.split('@')[1].split('.')[1].length == 0) {
+		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
+		form.usuario.focus();
+		return false;
+	}
+
+	if(form.senha.value.trim() == '' || form.senha.value == null) {
+		mostrarAviso('falha', 'É necessário informar uma senha.');
+		form.senha.focus();
+		return false;
+	}
+
+	if(form.usuario.value != 'usu@usu.com'
+		|| form.senha.value != 'senha') {
+		mostrarAviso('falha', 'Usuário ou senha inválido.');
+		return false;
+	}
+
+	window.location = "perfil.xhtml";
 }
 
 function validarCadastro() {
-	$('.aviso-falha').remove();
 	var form = document.forms['form_cadastro'];
 
 	if(form.nome.value.trim() == '' || form.nome.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar um nome.');
+		mostrarAviso('falha', 'É necessário informar um nome.');
 		form.nome.focus();
 		return false;
 	}
 
 	if(form.sobrenome.value.trim() == '' || form.sobrenome.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar um sobrenome.');
+		mostrarAviso('falha', 'É necessário informar um sobrenome.');
 		form.sobrenome.focus();
 		return false;
 	}
 
 	if(form.cidade.value.trim() == '' || form.cidade.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma cidade.');
+		mostrarAviso('falha', 'É necessário informar uma cidade.');
 		form.cidade.focus();
 		return false;
 	}
 
 	if(form.bairro.value.trim() == '' || form.bairro.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar um bairro.');
+		mostrarAviso('falha', 'É necessário informar um bairro.');
 		form.bairro.focus();
 		return false;
 	}
 
 	if(form.rua.value.trim() == '' || form.rua.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma rua.');
+		mostrarAviso('falha', 'É necessário informar uma rua.');
 		form.rua.focus();
 		return false;
 	}
 
 	if(form.numero.value.trim() == '' || form.numero.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar um número.');
+		mostrarAviso('falha', 'É necessário informar um número.');
 		form.numero.focus();
 		return false;
 	}
 
 	if(form.email.value.trim() == '' || form.email.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar um e-mail.');
+		mostrarAviso('falha', 'É necessário informar um e-mail.');
 		form.email.focus();
 		return false;
 	}
@@ -107,35 +124,34 @@ function validarCadastro() {
 		|| form.email.value.split('@')[1].indexOf('.') == -1
 		|| form.email.value.split('@')[1].split('.')[0].length == 0
 		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar um e-mail válido.');
+		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
 		form.email.focus();
 		return false;
 	}
 
 	if(form.senha.value.trim() == '' || form.senha.value == null) {
-		avisoFalha('form[name=form_cadastro]', 'É necessário informar uma senha.');
+		mostrarAviso('falha', 'É necessário informar uma senha.');
 		form.senha.focus();
 		return false;
-	}else if(form.senha.value != form.confsenha.value){
-		avisoFalha('form[name=form_cadastro]', 'As senhas devem ser iguais.');
+	} else if(form.senha.value != form.confsenha.value){
+		mostrarAviso('falha', 'As senhas devem ser iguais.');
 		form.confsenha.focus();
 		return false;
 	}
 
-	avisoSucesso('form[name=form_cadastro]', 'Usuário cadastrado com sucesso.');
+	mostrarAviso('sucesso', 'Usuário cadastrado com sucesso.');
 }
 
 function validarAvaliacao() {
-	$('.aviso-falha').remove();
 	var form = document.forms['form_avaliacao'];
 
 	if(form.nome.value.trim() == '' || form.nome.value == null) {
-		avisoFalha('form[name=form_avaliacao]', 'É necessário informar um nome.');
+		mostrarAviso('falha', 'É necessário informar um nome.');
 		return false;
 	}
 
 	if(form.email.value.trim() == '' || form.email.value == null) {
-		avisoFalha('form[name=form_avaliacao]', 'É necessário informar um e-mail.');
+		mostrarAviso('falha', 'É necessário informar um e-mail.');
 		return false;
 	}
 
@@ -146,17 +162,17 @@ function validarAvaliacao() {
 		|| form.email.value.split('@')[1].indexOf('.') == -1
 		|| form.email.value.split('@')[1].split('.')[0].length == 0
 		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
-		avisoFalha('form[name=form_avaliacao]', 'É necessário informar um e-mail válido.');
+		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
 		return false;
 	}
 
 	if(form.avaliacao.value.trim() == '' || form.avaliacao.value == null) {
-		avisoFalha('form[name=form_avaliacao]', 'É necessário comentar sua avaliação.');
+		mostrarAviso('falha', 'É necessário comentar sua avaliação.');
 		return false;
 	}
 
 	if(form.nota.value.trim() == '' || form.nota.value == null) {
-		avisoFalha('form[name=form_avaliacao]', 'É necessário informar uma nota.');
+		mostrarAviso('falha', 'É necessário informar uma nota.');
 		return false;
 	}
 
@@ -174,6 +190,48 @@ function validarAvaliacao() {
 		</div>');
 
 	avisoSucesso('form[name=form_avaliacao]', 'Avaliação enviada com sucesso.');
+}
+
+function validarSugestao() {
+	var form = document.forms['form_sugestao'];
+
+	if(form.nome.value.trim() == '' || form.nome.value == null) {
+		mostrarAviso('falha', 'É necessário informar um nome.');
+		form.nome.focus();
+		return false;
+	}
+
+	if(form.sobrenome.value.trim() == '' || form.sobrenome.value == null) {
+		mostrarAviso('falha', 'É necessário informar um sobrenome.');
+		form.sobrenome.focus();
+		return false;
+	}
+
+	if(form.email.value.trim() == '' || form.email.value == null) {
+		mostrarAviso('falha', 'É necessário informar um e-mail.');
+		form.email.focus();
+		return false;
+	}
+
+	if(form.email.value.indexOf('@') == -1
+		|| form.email.value.indexOf(' ') != -1
+		|| form.email.value.split('@')[0].length == 0
+		|| form.email.value.split('@')[1].length == 0
+		|| form.email.value.split('@')[1].indexOf('.') == -1
+		|| form.email.value.split('@')[1].split('.')[0].length == 0
+		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
+		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
+		form.email.focus();
+		return false;
+	}
+
+	if(form.sugestao.value.trim() == '' || form.sugestao.value == null) {
+		mostrarAviso('falha', 'É necessário informar uma sugestão.');
+		form.sugestao.focus();
+		return false;
+	}
+
+	mostrarAviso('sucesso', 'Segestão cadastrada com sucesso.');
 }
 
 function validarNota(nota) {

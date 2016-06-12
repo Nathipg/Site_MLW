@@ -8,11 +8,12 @@ function incluirMenu() {
 				<h1>Menu</h1>\n\
 				<ul>\n\
 					<a href="avaliacao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-star"></span> Avaliação dos Usuários</li></a>\n\
+					<a href="cadastrar_sugestao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Enviar Sugestão</li></a>\n\
 					<a href="cadastro.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user"></span> Cadastro</li></a>\n\
 					<a href="consoles.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-certificate"></span> Consoles</li></a>\n\
 					<a href="acessorios.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-cog"></span> Acessórios</li></a>\n\
 					<a href="games.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-barcode"></span> Games</li></a>\n\
-					<a href="sobre.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-road"></span> Sobre nós</li></a>\n\
+					<a href="sobre.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-road"></span> Sobre Nós</li></a>\n\
 				</ul>\n\
 			</div>\n\
 		</div>');
@@ -44,10 +45,10 @@ function incluirCabecalho () {
 						<div class="col-lg-12">\n\
 							<ul>\n\
 								<a href="index.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-home" /> Início</li></a>\n\
-								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-lock" /> Login</li></a>\n\
+								<a href="#" data-toggle="modal" data-target="#myModal" class="coin-sound"><li><span class="glyphicon glyphicon-lock" /> Login</li></a>\n\
 								<a href="perfil.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user" /> Perfil</li></a>\n\
 								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-shopping-cart" /> Carrinho</li></a>\n\
-								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Sugestões</li></a>\n\
+								<a href="sugestao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Sugestões</li></a>\n\
 								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-ok" /> Aprovar Críticas</li></a>\n\
 								<a href="#" class="coin-sound"><li><span class="glyphicon glyphicon-list-alt" /> Cadastrar Produtos</li></a>\n\
 								<button id="somcontrol" class="glyphicon glyphicon-volume-up" data-toggle="tooltip" title="Desabilitar / Habilitar Som"></button>\n\
@@ -96,10 +97,43 @@ function incluirRodape () {
 }
 function incluirModal(){
 	$('body').prepend('\n\
-	<div id="modalIncCarrinho" class="modal-sucesso">\n\
-		<span class="titulo">Sucesso</span><br/>\n\
-		<span class="mensagem">Item adicionado ao carrinho</span>\n\
+	<div id="aviso" class="aviso">\n\
+		<span class="titulo"></span><br/>\n\
+		<span class="mensagem"></span>\n\
 		<div class="barra-progresso"></div>\n\
+	</div>');
+
+	$('body').append('\n\
+	<div class="modal fade" id="myModal">\n\
+		<div class="modal-dialog">\n\
+			<div class="modal-content">\n\
+				<div class="modal-header">\n\
+					<button type="button" class="close" data-dismiss="modal">\n\
+						<span class="glyphicon glyphicon-remove-circle"></span>\n\
+					</button>\n\
+					<h4 class="modal-title">Login</h4>\n\
+				</div>\n\
+				<div class="modal-body">\n\
+					<p>Preencha o formulário abaixo para se identificar.</p>\n\
+					<br/>\n\
+					<form name="formulario_login">\n\
+						<label>Usuário</label><br/>\n\
+						<input class="form-control" type="text" name="usuario" /><br/>\n\
+						<label>Senha</label><br/>\n\
+						<input class="form-control" type="password" name="senha" />\n\
+					</form>\n\
+				</div>\n\
+				<div class="modal-footer">\n\
+					<div class="row">\n\
+						<div class="col-lg-12">\n\
+							<button type="button" class="btn btn-primary"\n\
+								onclick="validarLogin()">Acessar</button>\n\
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>\n\
+						</div>\n\
+					</div>\n\
+				</div>\n\
+			</div>\n\
+		</div>\n\
 	</div>');
 }
 function incluirAudios() {

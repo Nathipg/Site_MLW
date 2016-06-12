@@ -46,7 +46,7 @@ textarea {
 	top: 0;
 	left: -18.2em;
 	height: 100%;
-	z-index: 9999;
+	z-index: 9998;
 }
 
 #menu ul {
@@ -141,7 +141,7 @@ textarea {
 /* Fim Menu de Atalhos */
 
 /* Cores  */
-#menu{
+#menu {
 	background: rgba(0, 0, 0, 0.8); /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(black, rgba(0, 0, 0, 0.8)); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(black, rgba(0, 0, 0, 0.8)); /* For Opera 11.1 to 12.0 */
@@ -251,33 +251,12 @@ textarea {
 
 /* Fim Post */
 
-/* Aviso */
-.aviso-sucesso {
-	border-radius: 1em;
-	padding: 1em;
-	background-color: #32CD32;
-	font-weight: bold;
-	color: white;
-	margin: 1em 0em 1em 0em;
-}
-
-.aviso-falha {
-	border-radius: 1em;
-	padding: 1em;
-	background-color: #FF6347;
-	font-weight: bold;
-	color: white;
-	margin: 1em 0em 1em 0em;
-}
-/* Fim Aviso */
-
 /* Perfil */
 .fotoperfil{
 	width: 18em;
 	height: 23em;
 	text-align: center;
 	margin: auto;
-	overflow: auto;
 	text-align: center;
 }
 
@@ -287,8 +266,8 @@ textarea {
 }
 /* Fim Perfil */
 
-/*Confirmação carrinho*/
-.modal-sucesso {
+/* Aviso */
+.aviso {
 	position: fixed;
   	top: 5px;
   	right: 5px;
@@ -302,25 +281,41 @@ textarea {
 	display: none;
 }
 
-.modal-sucesso .mensagem {
+.aviso .mensagem {
 	font-size: 1em;
 	color: white;
 }
 
-.modal-sucesso .titulo {
+.aviso .titulo {
 	font-weight: bold;
-	color: #32CD32;
 	font-size: 1.3em;
 }
 
-.modal-sucesso .barra-progresso {
+.aviso .barra-progresso {
 	width: 100%;
 	background-color: #AAA;
 	height: 0.5em;
 	margin-top: 5px;
 	border-radius: 1em;
 }
-/* Fim Confirmação */
+
+.aviso-sucesso .titulo {
+	color: #32CD32;
+}
+
+.aviso-falha .titulo {
+	color: #FE3232;
+}
+/* Fim Aviso */
+
+.modal {
+	z-index: 9999 !important;
+}
+
+.modal-footer button{
+	float: right;
+	margin: 0em 0em 0em 1em;
+}
 
 /* Responsividade */
 
