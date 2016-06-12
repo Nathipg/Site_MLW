@@ -166,7 +166,7 @@ textarea {
 }
 /* Ajuste da pagina com o menu lateral */
 #rodape, #cabecalho, #barra-funcionalidades {
-	margin-left: 3.3em;	
+	margin-left: 3.3em;
 }
 
 #rodape {
@@ -186,7 +186,7 @@ textarea {
 	margin: 2em;
 }
 .nota {
-	text-align: center;	
+	text-align: center;
 }
 
 /* Animações: ass:Sra Eu tenho tempo*/
@@ -241,7 +241,6 @@ textarea {
 	font-style: bold;
 	font-size: 3em;
 	color: orange;
-	
 }
 /*Fim Produto e Preço*/
 
@@ -272,19 +271,6 @@ textarea {
 }
 /* Fim Aviso */
 
-/*Confirmação carrinho*/
-.modal-center{
-	margin: auto;
-	height: 50%;
-	width: 50%;
-}
-
-.modal-content{
-	background-color: #32CD32;
-}
-
-/* Fim Confirmação */
-
 /* Perfil */
 .fotoperfil{
 	width: 18em;
@@ -301,7 +287,48 @@ textarea {
 }
 /* Fim Perfil */
 
+/*Confirmação carrinho*/
+.modal-sucesso {
+	position: fixed;
+  	top: 5px;
+  	right: 5px;
+	width: 20em;
+	float: right;
+	background-color: black;
+	z-index: 9999 !important;
+	padding: 1em;
+	border: 2px solid white;
+	border-radius: 1em;
+	display: none;
+}
+
+.modal-sucesso .mensagem {
+	font-size: 1em;
+	color: white;
+}
+
+.modal-sucesso .titulo {
+	font-weight: bold;
+	color: #32CD32;
+	font-size: 1.3em;
+}
+
+.modal-sucesso .barra-progresso {
+	width: 100%;
+	background-color: #AAA;
+	height: 0.5em;
+	margin-top: 5px;
+	border-radius: 1em;
+}
+/* Fim Confirmação */
+
 /* Responsividade */
+
+@media (max-width: 350px){
+	.modal-sucesso {
+		width: 16em;
+	}
+}
 
 @media (max-width: 720px){
 	#menu-atalhos .texto-menu-fechado {
@@ -317,19 +344,19 @@ textarea {
 		display: block;
 		padding: 0.5em;
 	}
-	
+
 	#nomeSite {
 		font-size: 2em;
 		font-family: "Viner Hand ITC";
 	}
-	
+
 	#logohome {
 		height: 6em;
 		width: 6em;
 	}
 
 	h1{
-		font-size: 2em;	
+		font-size: 2em;
 	}
 	h2 {
 		font-size: 1.5em;
@@ -337,7 +364,7 @@ textarea {
 	.btn {
 		display: block;
 		margin: 0 auto;
-		margin-bottom: 0.5em; 
+		margin-bottom: 0.5em;
 	}
 	.fotoperfil {
 		margin-bottom: 1em;
@@ -355,7 +382,7 @@ textarea {
 		text-align: center;
 	}
 }
-	
+
 @media (min-width: 720px) {
 	#menu-atalhos .texto-menu-aberto{
 		display: block !important;

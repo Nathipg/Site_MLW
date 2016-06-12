@@ -19,8 +19,16 @@ function playSound(tipo){
 
 function adicionarCarrinho() {
 	$('#modalIncCarrinho').css("display", "block");
+	var porcentagem = 100;
+	setInterval(function() {
+		if(porcentagem != 0) {
+			porcentagem--;
+			$('.modal-sucesso .barra-progresso').css('width', porcentagem + '%');
+		}
+	}, 30);
 	setTimeout(function(){
 		$('#modalIncCarrinho').css("display", "none");
+		$('.modal-sucesso .barra-progresso').css('width', '100%');
 	}, 3000);
 }
 
