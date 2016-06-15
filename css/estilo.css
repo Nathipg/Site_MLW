@@ -299,7 +299,7 @@ textarea {
 	width: 20em;
 	float: right;
 	background-color: black;
-	z-index: 9999 !important;
+	z-index: 99999 !important;
 	padding: 1em;
 	border: 2px solid white;
 	border-radius: 1em;
@@ -334,7 +334,7 @@ textarea {
 /* Fim Aviso */
 
 .modal {
-	z-index: 9999 !important;
+	z-index: 9999;
 }
 
 .modal-footer button{
@@ -423,10 +423,15 @@ thead th:last-child {
 		height: 6em;
 		width: 6em;
 	}
+	
+	#conteudo-pagina {
+		padding-left: 2.9em;
+	}
 
 	h1{
 		font-size: 2em;
 	}
+	
 	h2 {
 		font-size: 1.5em;
 	}
@@ -443,9 +448,7 @@ thead th:last-child {
 	.preco{
 		text-align: center;
 	}
-	.conteudo-margem {
-		margin: 1.8em;
-	}
+
 }
 
 @media (min-width: 720px) {
