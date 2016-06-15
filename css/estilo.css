@@ -443,6 +443,9 @@ thead th:last-child {
 	.preco{
 		text-align: center;
 	}
+	.conteudo-margem {
+		margin: 1.8em;
+	}
 }
 
 @media (min-width: 720px) {
