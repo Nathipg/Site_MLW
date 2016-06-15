@@ -8,7 +8,7 @@ function incluirMenu() {
 				<h1>Menu</h1>\n\
 				<ul>\n\
 					<a href="avaliacao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-star"></span> Avaliação dos Usuários</li></a>\n\
-					<a href="cadastrar_sugestao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Enviar Sugestão</li></a>\n\
+					<a href="sugestao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Sugestões</li></a>\n\
 					<a href="cadastro.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user"></span> Cadastro</li></a>\n\
 					<a href="consoles.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-certificate"></span> Consoles</li></a>\n\
 					<a href="acessorios.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-cog"></span> Acessórios</li></a>\n\
@@ -45,12 +45,14 @@ function incluirCabecalho () {
 						<div class="col-lg-12">\n\
 							<ul>\n\
 								<a href="index.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-home" /> Início</li></a>\n\
-								<a href="#" data-toggle="modal" data-target="#myModal" class="coin-sound"><li><span class="glyphicon glyphicon-lock" /> Login</li></a>\n\
-								<a href="perfil.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-user" /> Perfil</li></a>\n\
+								<a href="#" data-toggle="modal" data-target="#myModal" class="coin-sound login"><li><span class="glyphicon glyphicon-lock" /> Login</li></a>\n\
+								<a href="" onclick="deslogado()" class="coin-sound logout"><li><span class="glyphicon glyphicon-log-out" /> Logout</li></a>\n\
+								<a href="perfil.xhtml" class="coin-sound gUser gAdm"><li><span class="glyphicon glyphicon-user" /> Perfil</li></a>\n\
 								<a href="carrinho.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-shopping-cart" /> Carrinho</li></a>\n\
-								<a href="sugestao.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-pencil" /> Sugestões</li></a>\n\
-								<a href="cadastrar_produto.xhtml" class="coin-sound"><li><span class="glyphicon glyphicon-list-alt" /> Cadastrar Produtos</li></a>\n\
-								<button id="somcontrol" class="glyphicon glyphicon-volume-up" data-toggle="tooltip" title="Desabilitar / Habilitar Som"></button>\n\
+								<a href="cadastrar_sugestao.xhtml" class="coin-sound gUser"><li><span class="glyphicon glyphicon-pencil" /> Enviar Sugestão</li></a>\n\
+								<a href="cadastrar_produto.xhtml" class="coin-sound gAdm"><li><span class="glyphicon glyphicon-list-alt" /> Cadastrar Produtos</li></a>\n\
+								<button onclick="somOff()" class="glyphicon glyphicon-volume-up somOn" data-toggle="tooltip" title="Desabilitar Som"></button>\n\
+								<button onclick="somOn()" class="glyphicon glyphicon-volume-off somOff" data-toggle="tooltip" title="Habilitar Som"></button>\n\
 							</ul>\n\
 						</div>\n\
 					</div>\n\

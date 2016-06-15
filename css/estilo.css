@@ -30,6 +30,12 @@ textarea {
 	cursor: pointer;
 }
 
+/*permissoes*/
+.gAdm, .gUser, .somOff {
+	display: none;
+}
+/*fim*/
+
 #nomeSite{
 	font-size: 9em;
 	font-family: "Viner Hand ITC";
@@ -43,6 +49,10 @@ textarea {
 /* Menu */
 #conteudo-pagina {
 	padding-left: 3em;
+}
+
+#cabecalho{
+	cursor: pointer;
 }
 
 #menu {
@@ -127,7 +137,7 @@ textarea {
 	text-align: right;
 }
 
-#somcontrol {
+.somOn, .somOff {
 	text-align:center;
 	background: transparent;
 	color: white;
@@ -137,7 +147,7 @@ textarea {
 	float: right;
 }
 
-#somcontrol:hover{
+.somOn:hover, .somOff:hover{
 	background: rgba(255, 255, 255, 0.8);
 	border-radius: 0.3em;
 	color: black;
@@ -239,9 +249,15 @@ textarea {
 /* Produto e Preço*/
 .produto{
 	min-height: 20em;
+	text-align: center;
+}
+
+.produto h1{
+	text-align: center;
 }
 
 .preco{
+	text-align: center;
 	font-style: bold;
 	font-size: 3em;
 	color: orange;
@@ -261,7 +277,6 @@ textarea {
 	height: 23em;
 	text-align: center;
 	margin: auto;
-	text-align: center;
 }
 
 .fotoperfil img{
@@ -409,6 +424,7 @@ thead th:last-child {
 	h2 {
 		font-size: 1.5em;
 	}
+
 	.btn {
 		display: block;
 		margin: 0 auto;
@@ -417,15 +433,7 @@ thead th:last-child {
 	.fotoperfil {
 		margin-bottom: 1em;
 	}
-	img{
-		position: relative;
-		display: block;
-		float: left;
-	}
-	.img-responsive{
-		width: 15em;
-		padding-right: 1.8em;
-	}
+
 	.preco{
 		text-align: center;
 	}

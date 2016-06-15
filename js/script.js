@@ -1,8 +1,75 @@
 /* [Nathalia Pissuti e Laionel Lellis 15.05.2016] */
 
-/* Função definir sons */
+// Cookies //
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length,c.length);
+        }
+    }
+    return "";
+} 
+// Fim dos cookies - e todos ficam com fome //
+
+// Controle dos menus//
+function habilitaMenu(){
+	var cookieGrupo = getCookie("grupo");
+	$(cookieGrupo).css("display", "inline");
+	if (cookieGrupo != ""){
+		$('.login').css("display", "none");
+	} else {
+		$('.logout').css("display", "none");
+	}
+	checkSound();
+}
+
+function checkSound(){
+	var cookieSom = getCookie("som");
+	if (cookieSom == "on" || cookieSom ==""){
+		$('.somOn').css("display", "inline");
+		$('.somOff').css("display", "none");
+	} else if (cookieSom == "off"){
+		$('.somOff').css("display", "inline");
+		$('.somOn').css("display", "none");
+	}
+}
+// Fim do controle dos menus //
+
+// Controle som do site //
+function somOn(){
+	document.cookie = "som=on";
+	checkSound();
+}
+function somOff(){
+	document.cookie = "som=off";
+	checkSound();
+}
+// Fim do controle de som //
+
+// Função login //
+function logado(nomeGrupo){
+	document.cookie = "grupo=" + nomeGrupo;
+	$('.login').css("display", "none");
+	$('.logout').css("display", "inline");
+}
+
+function deslogado(){
+	document.cookie = "grupo=" + "";
+	window.location = "index.xhtml";
+}
+// Fim login //
+
+// Função definir sons //
+
 function playSound(tipo){
-	if($('#somcontrol').hasClass('glyphicon-volume-up')) {
+	var somCookie = getCookie("som");
+	if(somCookie != "off") {
 		switch (tipo) {
 			case 1:
 			$('#sommenuopen').trigger('play');
@@ -16,7 +83,9 @@ function playSound(tipo){
 		}
 	}
 }
+// Fim // 
 
+// Função de avisos - modal //
 function mostrarAviso(tipo, mensagem) {
 	$('#aviso').addClass('aviso-' + tipo);
 	$('#aviso .titulo').html(tipo[0].toUpperCase() + tipo.substr(1));
@@ -35,7 +104,9 @@ function mostrarAviso(tipo, mensagem) {
 		$('#aviso').removeClass('aviso-' + tipo);
 	}, 3000);
 }
+// Fim dos avisos //
 
+// Funções de validação //
 function validarLogin() {
 	var form = document.forms['formulario_login'];
 
@@ -62,15 +133,29 @@ function validarLogin() {
 		form.senha.focus();
 		return false;
 	}
-
-	if(form.usuario.value != 'usu@usu.com'
-		|| form.senha.value != 'senha') {
-		mostrarAviso('falha', 'Usuário ou senha inválido.');
-		return false;
-	} else {
-		mostrarAviso('sucesso', 'Bem vindo ' + form.usuario.value + '!');
+	switch (form.usuario.value){
+		case "usu@usu.com":
+			if (form.senha.value != 'senha'){
+				mostrarAviso('falha', 'Usuário ou senha inválido.');
+			} else {
+				mostrarAviso('sucesso', 'Bem vindo ' + form.usuario.value + '!');
+				logado(".gUser");
+				setTimeout(function(){location.reload()}, 3100);
+			}
+			break;
+		case "adm@wizardgames.net":
+			if (form.senha.value != 'adm123'){
+				mostrarAviso('falha', 'Usuário ou senha inválido.');
+			} else {
+				mostrarAviso('sucesso', 'Bem vindo ' + form.usuario.value + '!');
+				logado(".gAdm");
+				setTimeout(function(){location.reload()}, 3100);
+			}
+			break;
+		default:
+			mostrarAviso('falha', 'Usuário ou senha inválido.');
 	}
-	setTimeout(function(){window.location = "perfil.xhtml"}, 3100);
+	/**/
 }
 
 function validarCadastro() {
@@ -222,17 +307,16 @@ function validarSugestao() {
 		|| form.email.value.split('@')[1].split('.')[0].length == 0
 		|| form.email.value.split('@')[1].split('.')[1].length == 0) {
 		mostrarAviso('falha', 'É necessário informar um e-mail válido.');
-	form.email.focus();
-	return false;
-}
+		form.email.focus();
+		return false;
+	}
 
-if(form.sugestao.value.trim() == '' || form.sugestao.value == null) {
-	mostrarAviso('falha', 'É necessário informar uma sugestão.');
-	form.sugestao.focus();
-	return false;
-}
-
-mostrarAviso('sucesso', 'Segestão cadastrada com sucesso.');
+	if(form.sugestao.value.trim() == '' || form.sugestao.value == null) {
+		mostrarAviso('falha', 'É necessário informar uma sugestão.');
+		form.sugestao.focus();
+		return false;
+	}
+	mostrarAviso('sucesso', 'Segestão cadastrada com sucesso.');
 }
 
 function validarProduto() {
@@ -276,7 +360,9 @@ function validarNota(nota) {
 
 	return nota;
 }
-/* Função dados do usuário*/
+// Fim das validações //
+
+// Função dados do usuário //
 function userInfo(){
 	$('#userFoto').attr("src","img/logo2.png")
 	$('#userName').text("Seu nome aqui");
@@ -291,11 +377,10 @@ function userInfo(){
 	$('#userEmail').text("email@email.com");
 }
 
+// Carrinho //
 function finalizarCompra() {
 	mostrarAviso('sucesso', 'O boleto foi enviado para o e-mail cadastrado');
-	setTimeout(function() {
-		window.location = 'perfil.xhtml';
-	}, 3000);
+	setTimeout(function() {location.reload()}, 3000);
 }
 
 function removerItemCarrinho(id) {
@@ -310,8 +395,13 @@ function removerItemCarrinho(id) {
 
 	mostrarAviso('sucesso', 'Item removido');
 }
+// Fim do Carrinho //
 
 $(document).ready(function () {
+	$('#cabecalho').click(function() {
+		window.location = "index.xhtml";
+	});
+	
 	/* Funcao responsavel por abrir o menu */
 	$('#menu .menuclick').click(function() {
 		if($('#menu').hasClass('menu-fechado')) {
@@ -334,12 +424,6 @@ $(document).ready(function () {
 			playSound(2);
 		}
 		$('#menu').toggleClass('menu-fechado');
-	});
-
-	/* Controle do som do site */
-	$('#somcontrol').click(function() {
-		$(this).toggleClass('glyphicon-volume-up');
-		$(this).toggleClass('glyphicon-volume-off');
 	});
 
 	/* Funcao responsavel por abrir o menu de atalhos */
