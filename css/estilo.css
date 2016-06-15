@@ -196,6 +196,12 @@ textarea {
 }
 /* Fim Cores*/
 
+.pequeno {
+	font-size: 0.6em;
+	padding: 0em 1.8em 0em 1.8em;
+	font-style: italic;
+	float: right;
+}
 .conteudo-margem {
 	margin: 2em;
 }

@@ -88,11 +88,14 @@ function incluirRodape () {
 				<div class="col-lg-2">\n\
 					<h3>Endereço</h3>\n\
 					<span class="glyphicon glyphicon-home"></span> &#160; Suíça, Liechtenstein <br/>\n\
-		&#160;&#160;&#160;&#160;&#160;&#160; Vaduz - 9490\n\
+					&#160;&#160;&#160;&#160;&#160;&#160; Vaduz - 9490\n\
 				</div>\n\
 				<div class="col-lg-4">\n\
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d608.6360446388463!2d9.52037434630057!3d47.14105024607922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b31665c517ef3%3A0x5143d97dca1b7b82!2s9490+Vaduz%2C+Liechtenstein!5e1!3m2!1spt-BR!2sbr!4v1463615251698"></iframe>\n\
 				</div>\n\
+			</div>\n\
+			<div class="row">\n\
+				<span class="pequeno">Todos os produtos aqui apresentados são meramente ilustrativos e suas marcas são propriedades de seus fabricantes. Site apenas para estudos de HTML,JavaScrip, CSS etc.</span>\n\
 			</div>\n\
 		</div>');
 }
