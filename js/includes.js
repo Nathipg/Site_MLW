@@ -95,7 +95,7 @@ function incluirRodape () {
 				</div>\n\
 			</div>\n\
 			<div class="row">\n\
-				<span class="pequeno">Todos os produtos aqui apresentados são meramente ilustrativos e suas marcas são propriedades de seus fabricantes. Site apenas para estudos de HTML,JavaScrip, CSS etc.</span>\n\
+				<span class="pequeno">Todos os produtos aqui apresentados são meramente ilustrativos e suas marcas são propriedades de seus fabricantes. Site apenas para estudos de HTML, JavaScript, CSS etc.</span>\n\
 			</div>\n\
 		</div>');
 }
