@@ -24,7 +24,7 @@ function incluirCabecalho () {
 		<div id="cabecalho" class="secao">\n\
 			<div class="row text-center secao">\n\
 				<div class="col-lg-1">\n\
-					<img id="logohome" src="img/Logo1.png" alt="Logo" />\n\
+					<img id="logohome" src="img/logo1.png" alt="Logo" />\n\
 				</div>\n\
 				<div class="col-lg-11">\n\
 					<h1 id="nomeSite">Wizard Games</h1>\n\
