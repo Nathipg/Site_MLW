@@ -133,27 +133,18 @@ function validarLogin() {
 		form.senha.focus();
 		return false;
 	}
-	switch (form.usuario.value){
-		case "usu@usu.com":
-			if (form.senha.value != 'senha'){
-				mostrarAviso('falha', 'Usuário ou senha inválido.');
-			} else {
-				mostrarAviso('sucesso', 'Bem vindo ' + form.usuario.value + '!');
-				logado(".gUser");
-				setTimeout(function(){location.reload()}, 3100);
-			}
-			break;
-		case "adm@wizardgames.net":
-			if (form.senha.value != 'adm123'){
-				mostrarAviso('falha', 'Usuário ou senha inválido.');
-			} else {
-				mostrarAviso('sucesso', 'Bem vindo ' + form.usuario.value + '!');
-				logado(".gAdm");
-				setTimeout(function(){location.reload()}, 3100);
-			}
-			break;
-		default:
-			mostrarAviso('falha', 'Usuário ou senha inválido.');
+	
+	resultadoLogin = (form.usuario.value == "usu@usu.com" && form.senha.value == "senha") 
+					|| (form.usuario.value == "adm@wizardgames.96.lt" && form.senha.value == "adm123") ? true : false;
+
+	tipoUser = form.usuario.value == "adm@wizardgames.96.lt" ? ".gAdm" : ".gUser";
+
+	if(resultadoLogin) {
+		mostrarAviso('sucesso', 'Bem vindo ' + form.usuario.value + '!');
+		logado(tipoUser);
+		setTimeout(function(){location.reload()}, 3100);
+	} else {
+		mostrarAviso('falha', 'Usuário ou senha inválido.');
 	}
 	/**/
 }
